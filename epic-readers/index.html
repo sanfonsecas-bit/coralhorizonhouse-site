@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Epic Readers — Chapter Stories for early readers</title>
+  <meta name="description" content="Epic Readers Chapter Stories: short, confidence-building books for kids ages 6–9. Free printable workbooks coming soon." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --pink: #c8398b;
+      --pink-soft: #fbe5f0;
+      --blue: #4ba3df;
+      --blue-soft: #e2f1fb;
+      --purple: #9c6cc5;
+      --purple-soft: #efe6f7;
+      --yellow: #f2bc30;
+      --yellow-soft: #fdf3d8;
+      --navy: #1b4a6b;
+      --ink: #0f2a3d;
+      --cream: #fcf8f2;
+      --paper: #ffffff;
+      --muted: #5e7989;
+      --teal: #0f766e;
+
+      --max: 1180px;
+      --radius-card: 28px;
+      --radius-btn: 999px;
+      --shadow-soft: 0 12px 36px rgba(15, 42, 61, 0.08);
+      --shadow-pop: 0 28px 64px rgba(15, 42, 61, 0.18);
+
+      --font-display: "Fredoka", system-ui, sans-serif;
+      --font-body: "Nunito", system-ui, sans-serif;
+      --font-hand: "Caveat", cursive;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- HEADER ---------- */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(252, 248, 242, 0.85);
+      border-bottom: 1px solid rgba(15, 42, 61, 0.06);
+    }
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .brand__shield {
+      width: 38px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, #34588c 0%, #243f6b 100%);
+      border-radius: 8px 8px 18px 18px;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      padding-top: 4px;
+      box-shadow: inset 0 -3px 0 rgba(0,0,0,0.12);
+    }
+    .brand__shield svg { width: 18px; height: 14px; }
+    .brand__name { display: flex; flex-direction: column; line-height: 1; }
+    .brand__name small {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--navy);
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .nav a:hover { opacity: 1; }
+    .nav__cta {
+      background: var(--navy);
+      color: #fff !important;
+      padding: 10px 18px;
+      border-radius: var(--radius-btn);
+      opacity: 1 !important;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav__cta:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(27, 74, 107, 0.25); }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 16px;
+      padding: 16px 28px;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(200, 57, 139, 0.32);
+    }
+    .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(200, 57, 139, 0.42); }
+    .btn--secondary {
+      background: var(--cream);
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .btn--secondary:hover { background: var(--navy); color: #fff; }
+    .btn--yellow {
+      background: var(--yellow);
+      color: var(--ink);
+      box-shadow: 0 10px 24px rgba(242, 188, 48, 0.4);
+    }
+    .btn--yellow:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(242, 188, 48, 0.5); }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      padding: 64px 0 90px;
+      overflow: hidden;
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .hero::before {
+      width: 420px; height: 420px;
+      top: -120px; left: -150px;
+      background: radial-gradient(circle, var(--pink-soft), transparent 70%);
+    }
+    .hero::after {
+      width: 460px; height: 460px;
+      top: 30%; right: -200px;
+      background: radial-gradient(circle, var(--blue-soft), transparent 70%);
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid rgba(15, 42, 61, 0.08);
+      padding: 8px 16px;
+      border-radius: var(--radius-btn);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      box-shadow: var(--shadow-soft);
+    }
+    .eyebrow__dot {
+      width: 8px; height: 8px;
+      background: var(--pink);
+      border-radius: 50%;
+    }
+    .hero__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(40px, 5.6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      margin: 20px 0 16px;
+    }
+    .hero__title .accent {
+      position: relative;
+      background: linear-gradient(120deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero__title .scribble {
+      font-family: var(--font-hand);
+      font-weight: 700;
+      color: var(--yellow);
+      font-size: 1.1em;
+    }
+    .hero__sub {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 0 32px;
+    }
+    .hero__ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero__trust {
+      margin-top: 30px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .hero__trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero__trust span::before {
+      content: "✓";
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    /* Hero visual — three covers fanned */
+    .hero__visual {
+      position: relative;
+      min-height: 460px;
+    }
+    .hero__cover {
+      position: absolute;
+      width: 230px;
+      aspect-ratio: 2/3;
+      border-radius: 14px;
+      box-shadow: var(--shadow-pop);
+      overflow: hidden;
+      transition: transform 0.4s ease;
+      background: #fff;
+    }
+    .hero__cover img, .book__cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero__cover:hover { transform: translateY(-6px) rotate(0deg) !important; }
+    .hero__cover--1 { left: 0; top: 30px; transform: rotate(-9deg); z-index: 1; }
+    .hero__cover--2 { left: 50%; top: 0; transform: translateX(-50%) rotate(2deg); z-index: 3; }
+    .hero__cover--3 { right: 0; top: 30px; transform: rotate(8deg); z-index: 2; }
+
+    /* Cover placeholder (used until real covers are dropped in) */
+    .cover-ph {
+      width: 100%; height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: #fff;
+      text-align: center;
+      font-family: var(--font-display);
+      gap: 10px;
+    }
+    .cover-ph::before {
+      content: "";
+      position: absolute; inset: 14% 10%;
+      background: rgba(255,255,255,0.92);
+      border-radius: 18px;
+    }
+    .cover-ph__shield {
+      position: absolute;
+      top: 12px;
+      background: rgba(255,255,255,0.95);
+      color: var(--navy);
+      padding: 6px 12px;
+      border-radius: 6px 6px 16px 16px;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      z-index: 2;
+    }
+    .cover-ph__title {
+      position: relative; z-index: 2;
+      font-size: 22px;
+      line-height: 1;
+      margin-top: 16px;
+      letter-spacing: -0.01em;
+    }
+    .cover-ph__grade {
+      position: relative; z-index: 2;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .cover-ph__edition {
+      position: absolute;
+      bottom: 22px; z-index: 2;
+      background: #fff;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+    }
+    .cover-ph--pink     { background: linear-gradient(180deg, #d65baa, #b6307a); }
+    .cover-ph--pink     .cover-ph__title, .cover-ph--pink .cover-ph__grade, .cover-ph--pink .cover-ph__edition { color: var(--pink); }
+    .cover-ph--blue     { background: linear-gradient(180deg, #6ec0f0, #3287c0); }
+    .cover-ph--blue     .cover-ph__title, .cover-ph--blue .cover-ph__grade, .cover-ph--blue .cover-ph__edition { color: var(--navy); }
+    .cover-ph--purple   { background: linear-gradient(180deg, #b48cd4, #8a55b8); }
+    .cover-ph--purple   .cover-ph__title, .cover-ph--purple .cover-ph__grade, .cover-ph--purple .cover-ph__edition { color: var(--purple); }
+
+    /* Floating accents around hero */
+    .float {
+      position: absolute;
+      font-family: var(--font-display);
+      font-weight: 700;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+    .float--star1 { top: 10px; left: 30%; color: var(--yellow); font-size: 32px; transform: rotate(15deg); }
+    .float--star2 { bottom: 30px; right: 10%; color: var(--pink); font-size: 26px; }
+    .float--dot   { bottom: 60px; left: 12%; width: 14px; height: 14px; background: var(--blue); border-radius: 50%; }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 90px 0; position: relative; }
+    .section__head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+    .section__eyebrow {
+      font-family: var(--font-hand);
+      font-size: 22px;
+      color: var(--pink);
+      letter-spacing: 0.02em;
+    }
+    .section__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.1;
+      color: var(--navy);
+      margin: 8px 0 16px;
+    }
+    .section__sub {
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    /* ---------- WHY ---------- */
+    .why { background: var(--paper); }
+    .why__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .pillar {
+      background: var(--cream);
+      border-radius: var(--radius-card);
+      padding: 32px 26px;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .pillar:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+    .pillar__icon {
+      width: 56px; height: 56px;
+      border-radius: 18px;
+      display: grid; place-items: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+    .pillar--pink   .pillar__icon { background: var(--pink-soft); }
+    .pillar--blue   .pillar__icon { background: var(--blue-soft); }
+    .pillar--purple .pillar__icon { background: var(--purple-soft); }
+    .pillar--yellow .pillar__icon { background: var(--yellow-soft); }
+    .pillar__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--navy);
+      margin: 0 0 8px;
+    }
+    .pillar__text { color: var(--muted); font-size: 15px; margin: 0; }
+
+    /* ---------- BOOKS ---------- */
+    .books { background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%); }
+    .books__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .book {
+      background: #fff;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid rgba(15, 42, 61, 0.06);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .book:hover { transform: translateY(-8px); box-shadow: var(--shadow-pop); }
+    .book__cover-wrap {
+      aspect-ratio: 2/3;
+      position: relative;
+      overflow: hidden;
+    }
+    .book__cover-wrap .cover-ph {
+      position: absolute; inset: 0;
+    }
+    .book__cover-wrap--pink   { background: linear-gradient(180deg, #f7c0dd, #e591bf); }
+    .book__cover-wrap--blue   { background: linear-gradient(180deg, #bee0f4, #80b9de); }
+    .book__cover-wrap--purple { background: linear-gradient(180deg, #d9c3eb, #b497d4); }
+    .book__body {
+      padding: 28px 26px 30px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .book__age {
+      display: inline-block;
+      background: var(--yellow-soft);
+      color: var(--navy);
+      padding: 4px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      width: fit-content;
+      margin-bottom: 14px;
+    }
+    .book__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--navy);
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+    .book__desc {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0 0 22px;
+      flex: 1;
+    }
+    .book .btn {
+      align-self: flex-start;
+      padding: 12px 22px;
+      font-size: 14px;
+    }
+    .books__more {
+      text-align: center;
+      margin-top: 40px;
+      font-family: var(--font-hand);
+      font-size: 22px;
+      color: var(--purple);
+    }
+
+    /* ---------- SIGNUP ---------- */
+    .signup {
+      background: linear-gradient(135deg, #c8398b 0%, #9c6cc5 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .signup::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12) 0, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0, transparent 40%);
+    }
+    .signup__inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .signup__eyebrow {
+      font-family: var(--font-hand);
+      font-size: 24px;
+      color: var(--yellow);
+    }
+    .signup__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.1;
+      margin: 8px 0 18px;
+    }
+    .signup__body { font-size: 17px; opacity: 0.92; max-width: 480px; }
+    .signup__body strong { background: rgba(242, 188, 48, 0.3); padding: 2px 8px; border-radius: 4px; }
+
+    .form {
+      background: #fff;
+      color: var(--ink);
+      padding: 36px;
+      border-radius: var(--radius-card);
+      box-shadow: 0 30px 80px rgba(15, 42, 61, 0.35);
+    }
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form__field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .form__field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .form__field input, .form__field select {
+      font-family: var(--font-body);
+      font-size: 15px;
+      padding: 13px 16px;
+      border: 1.5px solid #e3e8ec;
+      border-radius: 12px;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form__field input:focus, .form__field select:focus {
+      outline: none;
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(200, 57, 139, 0.12);
+    }
+    .form .btn { width: 100%; margin-top: 6px; padding: 17px; font-size: 17px; }
+    .form__fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about {
+      background: var(--paper);
+      text-align: center;
+    }
+    .about__inner { max-width: 680px; margin: 0 auto; }
+    .about__body {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .about__body em {
+      font-family: var(--font-hand);
+      font-style: normal;
+      font-size: 24px;
+      color: var(--navy);
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+      background: var(--navy);
+      color: #b8cad6;
+      padding: 56px 0 30px;
+    }
+    .footer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .footer .brand { color: #fff; }
+    .footer .brand small { color: #b8cad6; }
+    .footer__links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .footer__links a {
+      color: #b8cad6;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .footer__links a:hover { color: #fff; }
+    .footer__bottom {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: rgba(184, 202, 214, 0.7);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .hero { padding: 40px 0 60px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero__visual { min-height: 380px; }
+      .hero__cover { width: 180px; }
+      .why__grid { grid-template-columns: repeat(2, 1fr); }
+      .books__grid { grid-template-columns: 1fr; }
+      .signup__inner { grid-template-columns: 1fr; gap: 40px; }
+      .form { padding: 26px; }
+      .form__row { grid-template-columns: 1fr; }
+      section { padding: 64px 0; }
+    }
+    @media (max-width: 520px) {
+      .header__inner { height: 64px; }
+      .nav__cta { padding: 8px 14px; font-size: 14px; }
+      .hero__cover { width: 150px; }
+      .hero__cover--1 { left: 5%; }
+      .hero__cover--3 { right: 5%; }
+      .why__grid { grid-template-columns: 1fr; }
+      .footer__top { flex-direction: column; }
+    }
+
+    /* ---------- ANIMATIONS ---------- */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="wrap header__inner">
+      <a href="#" class="brand">
+        <div class="brand__shield">
+          <svg viewBox="0 0 24 18" fill="currentColor"><path d="M2 4h20l-2 9H4L2 4zm2 11h16l-1 2H5l-1-2zM10 1h4v3h-4z"/></svg>
+        </div>
+        <div class="brand__name">
+          Epic Readers
+          <small>By Coral Horizon House</small>
+        </div>
+      </a>
+      <nav class="nav">
+        <div class="nav__links" style="display: flex; gap: 32px;">
+          <a href="#books">Books</a>
+          <a href="#why">Why Epic Readers</a>
+          <a href="#about">About</a>
+        </div>
+        <a href="#signup" class="nav__cta">Get free workbooks</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy reveal">
+        <span class="eyebrow"><span class="eyebrow__dot"></span> Epic Readers · Chapter Stories</span>
+        <h1 class="hero__title">
+          Books your child will <span class="accent">actually finish</span> — and <span class="scribble">feel proud</span> of.
+        </h1>
+        <p class="hero__sub">
+          Short chapters, friendly illustrations, and stories kids genuinely want to come back to. The Chapter Stories series turns early reading into a confidence-building habit — without the overwhelm.
+        </p>
+        <div class="hero__ctas">
+          <a href="#books" class="btn btn--primary">Browse the Books →</a>
+          <a href="#signup" class="btn btn--secondary">Free workbooks (soon)</a>
+        </div>
+        <div class="hero__trust">
+          <span>12 stories per book</span>
+          <span>Ages 6–9</span>
+          <span>Comprehension built-in</span>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal">
+        <span class="float float--star1">★</span>
+        <span class="float float--star2">✦</span>
+        <span class="float float--dot"></span>
+
+        <!-- Cover 1: 1st Grade Boys -->
+        <div class="hero__cover hero__cover--1">
+          <img src="cover-boys-1st.jpg" alt="Chapter Stories for 1st Graders — Boys Edition" />
+        </div>
+        <!-- Cover 2: 1st Grade Girls (centered, top) -->
+        <div class="hero__cover hero__cover--2">
+          <img src="cover-girls-1st.jpg" alt="Chapter Stories for 1st Graders — Girls Edition" />
+        </div>
+        <!-- Cover 3: 3rd Grade Girls -->
+        <div class="hero__cover hero__cover--3">
+          <img src="cover-girls-3rd.png" alt="Chapter Stories for 3rd Graders — Girls Edition" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EPIC READERS -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div class="section__eyebrow">why parents love it</div>
+        <h2 class="section__title">Built for the moment kids start reading on their own.</h2>
+        <p class="section__sub">Every book in the series follows the same simple methodology: keep it short, keep it engaging, and let confidence grow page by page.</p>
+      </div>
+
+      <div class="why__grid">
+        <div class="pillar pillar--pink reveal">
+          <div class="pillar__icon">📖</div>
+          <h3 class="pillar__title">Confidence from page one</h3>
+          <p class="pillar__text">Short, manageable chapters so kids finish what they start.</p>
+        </div>
+        <div class="pillar pillar--blue reveal">
+          <div class="pillar__icon">🧠</div>
+          <h3 class="pillar__title">Comprehension built in</h3>
+          <p class="pillar__text">Each story includes simple questions that reinforce understanding.</p>
+        </div>
+        <div class="pillar pillar--purple reveal">
+          <div class="pillar__icon">✏️</div>
+          <h3 class="pillar__title">Learning without pressure</h3>
+          <p class="pillar__text">Fun activities that feel like play, not homework.</p>
+        </div>
+        <div class="pillar pillar--yellow reveal">
+          <div class="pillar__icon">🎨</div>
+          <h3 class="pillar__title">Illustrations that pull them in</h3>
+          <p class="pillar__text">Friendly art that keeps young readers engaged.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE BOOKS -->
+  <section class="books" id="books">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div class="section__eyebrow">the series</div>
+        <h2 class="section__title">The Chapter Stories collection</h2>
+        <p class="section__sub">Each edition is written for a specific grade and tailored to what kids that age actually love to read.</p>
+      </div>
+
+      <div class="books__grid">
+        <!-- Book 1: 1st Grade Boys -->
+        <article class="book reveal">
+          <div class="book__cover-wrap book__cover-wrap--blue">
+            <img src="cover-boys-1st.jpg" alt="Chapter Stories for 1st Graders — Boys Edition" />
+          </div>
+          <div class="book__body">
+            <span class="book__age">Ages 6–7</span>
+            <h3 class="book__title">Chapter Stories for 1st Graders — Boys Edition</h3>
+            <p class="book__desc">Twelve original adventures built for boys just starting to read on their own. Short, simple chapters keep him engaged from the first page, while built-in comprehension questions reinforce what he reads — without any pressure.</p>
+            <a href="https://www.amazon.com/dp/B0GXN8T6BP" target="_blank" rel="noopener" class="btn btn--primary">Buy on Amazon →</a>
+          </div>
+        </article>
+
+        <!-- Book 2: 1st Grade Girls -->
+        <article class="book reveal">
+          <div class="book__cover-wrap book__cover-wrap--pink">
+            <img src="cover-girls-1st.jpg" alt="Chapter Stories for 1st Graders — Girls Edition" />
+          </div>
+          <div class="book__body">
+            <span class="book__age">Ages 6–7</span>
+            <h3 class="book__title">Chapter Stories for 1st Graders — Girls Edition</h3>
+            <p class="book__desc">Twelve gentle, relatable stories written for girls taking their first steps as independent readers. Short chapters and friendly illustrations build her confidence page by page, with low-pressure activities woven in.</p>
+            <a href="https://www.amazon.com/dp/B0H1XNY6BV" target="_blank" rel="noopener" class="btn btn--primary">Buy on Amazon →</a>
+          </div>
+        </article>
+
+        <!-- Book 3: 3rd Grade Girls -->
+        <article class="book reveal">
+          <div class="book__cover-wrap book__cover-wrap--purple">
+            <img src="cover-girls-3rd.png" alt="Chapter Stories for 3rd Graders — Girls Edition" />
+          </div>
+          <div class="book__body">
+            <span class="book__age">Ages 8–9</span>
+            <h3 class="book__title">Chapter Stories for 3rd Graders — Girls Edition</h3>
+            <p class="book__desc">Twelve meaningful stories for girls ready for more — but not ready for thick, intimidating novels. Each tale runs across 3 short chapters, paired with comprehension questions and engaging illustrations.</p>
+            <a href="https://www.amazon.com/dp/B0GY76QD25" target="_blank" rel="noopener" class="btn btn--primary">Buy on Amazon →</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="books__more">More editions coming soon — 2nd Grade and 3rd Grade Boys on the way ✨</p>
+    </div>
+  </section>
+
+  <!-- EMAIL SIGNUP -->
+  <section class="signup" id="signup">
+    <div class="wrap signup__inner">
+      <div class="signup__copy reveal">
+        <div class="signup__eyebrow">free for early subscribers</div>
+        <h2 class="signup__title">Free printable workbooks — coming soon.</h2>
+        <p class="signup__body">
+          We're putting together free printable workbooks for every Epic Readers edition — handwriting, reading comprehension, and writing practice that pairs with each book.
+        </p>
+        <p class="signup__body">
+          Be the first to know when they drop, and get <strong>20% off</strong> on launch day as a thank-you for joining early.
+        </p>
+      </div>
+
+      <form class="form reveal" action="#" method="post" onsubmit="event.preventDefault(); document.getElementById('formMsg').textContent='Thanks! We\'ll email you the moment workbooks are ready.'; this.reset();">
+        <div class="form__row">
+          <div class="form__field">
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" type="text" placeholder="Sarah" />
+          </div>
+          <div class="form__field">
+            <label for="grade">Child's grade</label>
+            <select id="grade" name="grade">
+              <option value="">Pick one</option>
+              <option>1st grade</option>
+              <option>2nd grade</option>
+              <option>3rd grade</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form__field">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required placeholder="sarah@email.com" />
+        </div>
+        <button type="submit" class="btn btn--yellow">Send me the workbooks →</button>
+        <p class="form__fine" id="formMsg">No spam. One email when the workbooks are ready, plus your 20% off code. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about__inner reveal">
+      <div class="section__eyebrow" style="color: var(--purple);">about</div>
+      <h2 class="section__title">A small imprint with one big idea.</h2>
+      <p class="about__body">
+        Epic Readers is an imprint of <strong>Coral Horizon House</strong>, dedicated to making the early-reading years something kids — and parents — actually look forward to. Every book is designed around one question: <em>will my child want to read this again tomorrow?</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <a href="#" class="brand">
+          <div class="brand__shield">
+            <svg viewBox="0 0 24 18" fill="currentColor"><path d="M2 4h20l-2 9H4L2 4zm2 11h16l-1 2H5l-1-2zM10 1h4v3h-4z"/></svg>
+          </div>
+          <div class="brand__name">
+            Epic Readers
+            <small>By Coral Horizon House</small>
+          </div>
+        </a>
+        <div class="footer__links">
+          <a href="#books">Books</a>
+          <a href="#why">Why Epic Readers</a>
+          <a href="#signup">Workbooks</a>
+          <a href="#about">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Coral Horizon House. All rights reserved.</span>
+        <span>Made with care for early readers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Subtle scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
