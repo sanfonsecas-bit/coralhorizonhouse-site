@@ -843,15 +843,23 @@
         </p>
       </div>
 
-      <form class="form reveal" action="#" method="post" onsubmit="event.preventDefault(); document.getElementById('formMsg').textContent='Thanks! We\'ll email you the moment workbooks are ready.'; this.reset();">
+      <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form
+        class="form reveal seva-form formkit-form"
+        action="https://app.kit.com/forms/9454239/subscriptions"
+        method="post"
+        data-sv-form="9454239"
+        data-uid="36cce5ab56"
+        data-format="inline"
+        data-version="5">
         <div class="form__row">
           <div class="form__field">
             <label for="firstName">First name</label>
-            <input id="firstName" name="firstName" type="text" placeholder="Sarah" />
+            <input id="firstName" name="fields[first_name]" type="text" placeholder="Sarah" />
           </div>
           <div class="form__field">
             <label for="grade">Child's grade</label>
-            <select id="grade" name="grade">
+            <select id="grade" name="fields[grade]">
               <option value="">Pick one</option>
               <option>1st grade</option>
               <option>2nd grade</option>
@@ -861,11 +869,13 @@
           </div>
         </div>
         <div class="form__field">
-          <label for="email">Email *</label>
-          <input id="email" name="email" type="email" required placeholder="sarah@email.com" />
+          <label for="email_address">Email *</label>
+          <input id="email_address" name="email_address" type="email" required placeholder="sarah@email.com" />
         </div>
-        <button type="submit" class="btn btn--yellow">Send me the workbooks →</button>
-        <p class="form__fine" id="formMsg">No spam. One email when the workbooks are ready, plus your 20% off code. Unsubscribe anytime.</p>
+        <button data-element="submit" type="submit" class="btn btn--yellow">
+          <span>Send me the workbooks →</span>
+        </button>
+        <p class="form__fine">No spam. One email when the workbooks are ready, plus your 20% off code. Unsubscribe anytime.</p>
       </form>
     </div>
   </section>
