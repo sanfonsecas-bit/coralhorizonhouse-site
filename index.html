@@ -3,27 +3,384 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coral Horizon House</title>
+<title>Coral Horizon House — Independent Publisher</title>
+<meta name="description" content="Coral Horizon House is an independent publisher of beautiful, useful books for kids, families, and grown-ups. Home of Epic Readers, The Kind Way, and Tech Savvy Guides.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body {
-    margin:0; height:100vh; display:grid; place-items:center;
-    font-family: system-ui, -apple-system, sans-serif;
-    background: #fcf8f2; color: #1b4a6b; text-align: center; padding: 20px;
+  :root{
+    --paper:#FBF7EF; --paper2:#F3EADB; --ink:#1F2E2C; --ink2:#5E6F6C; --line:#E6DAC6;
+    --coral:#E2654F; --coral-deep:#C8533D; --gold:#C99A3B;
+    --kind:#138577; --epic:#3F73B8; --tech:#2E4C7E;
+    --maxw:1180px;
   }
-  h1 { font-weight: 600; letter-spacing: -0.01em; margin: 0 0 12px; font-size: clamp(32px, 5vw, 48px); }
-  p  { color: #5e7989; max-width: 480px; margin: 0 0 28px; line-height: 1.6; }
-  a  {
-    display: inline-block; padding: 14px 28px; background: #c8398b; color: #fff;
-    text-decoration: none; border-radius: 999px; font-weight: 600;
-    box-shadow: 0 10px 24px rgba(200,57,139,0.3);
-  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:"Inter",system-ui,sans-serif; font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:"Lora",Georgia,serif; font-weight:600; line-height:1.18; margin:0;}
+  a{color:inherit; text-decoration:none}
+  img{max-width:100%; display:block}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .label{font-family:"Inter",sans-serif; font-weight:700; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--coral-deep);}
+  .rule{height:1px; background:var(--line); border:0; margin:0;}
+  section[id]{scroll-margin-top:96px;}
+
+  .topbar{background:var(--ink); color:#f1ece1; text-align:center; font-size:13.5px; padding:10px 16px; font-weight:500;}
+  .topbar a{color:#fff; border-bottom:1px solid rgba(255,255,255,.5);}
+
+  header.nav{position:sticky; top:0; z-index:60; background:rgba(251,247,239,.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .name{font-family:"Lora",serif; font-weight:600; font-size:21px; color:var(--ink);}
+  .brand .name b{font-weight:600; color:var(--coral);}
+  nav.links{display:flex; gap:28px; align-items:center}
+  nav.links a{font-weight:600; font-size:14.5px; color:var(--ink); opacity:.82;}
+  nav.links a:hover{opacity:1; color:var(--coral-deep)}
+  .nav-cta{border:1.5px solid var(--ink); border-radius:999px; padding:9px 18px !important; font-size:13.5px !important; opacity:1 !important;}
+  .nav-cta:hover{background:var(--ink); color:var(--paper) !important;}
+  @media(max-width:880px){ nav.links a:not(.nav-cta){display:none} }
+
+  /* HERO — big free-standing fanned covers with hover motion */
+  .hero{padding:60px 0 64px;}
+  .hero-grid{display:grid; grid-template-columns:1fr 1.05fr; gap:48px; align-items:center;}
+  @media(max-width:900px){ .hero-grid{grid-template-columns:1fr; gap:46px; text-align:center;} }
+  .hero .kicker{display:inline-block; margin-bottom:18px;}
+  .hero h1{font-size:clamp(36px,4.8vw,58px); font-weight:600; color:var(--ink); max-width:14ch; line-height:1.12;}
+  @media(max-width:900px){ .hero h1{margin:0 auto;} }
+  .hero h1 .accent{color:var(--coral);}
+  .hero p{font-size:clamp(16.5px,1.5vw,19px); color:var(--ink2); max-width:500px; margin:20px 0 30px;}
+  @media(max-width:900px){ .hero p{margin-left:auto; margin-right:auto;} }
+  .hero .btns{display:flex; gap:13px; flex-wrap:wrap;}
+  @media(max-width:900px){ .hero .btns{justify-content:center;} }
+  .btn{display:inline-flex; align-items:center; gap:9px; font-weight:700; font-size:15px; padding:14px 26px; border-radius:999px; transition:transform .15s, background .15s, color .15s; cursor:pointer; border:1.5px solid transparent;}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--coral); color:#fff;}
+  .btn-primary:hover{background:var(--coral-deep)}
+  .btn-outline{border-color:var(--ink); color:var(--ink);}
+  .btn-outline:hover{background:var(--ink); color:var(--paper)}
+  .hero-art{display:flex; justify-content:center; align-items:flex-end; padding:14px 0;}
+  .hero-book{transition:transform .3s cubic-bezier(.2,.7,.3,1), box-shadow .3s;}
+  .hero-book img{width:auto; border-radius:11px; display:block; box-shadow:0 18px 36px rgba(31,46,44,.26);}
+  .hero-book.side img{height:280px;}
+  .hero-book.mid img{height:336px; box-shadow:0 26px 50px rgba(31,46,44,.34);}
+  .hero-book.left{transform:rotate(-7deg); margin-right:-24px; z-index:1;}
+  .hero-book.right{transform:rotate(7deg); margin-left:-24px; z-index:1;}
+  .hero-book.mid{z-index:3;}
+  .hero-book:hover{transform:translateY(-16px) rotate(0deg) scale(1.05); z-index:5;}
+  @media(max-width:480px){ .hero-book.side img{height:176px} .hero-book.mid img{height:210px} .hero-book.left{margin-right:-14px} .hero-book.right{margin-left:-14px} }
+
+  section.block{padding:60px 0;}
+  .head{display:flex; align-items:baseline; justify-content:space-between; gap:18px; margin-bottom:32px;}
+  .head .htext .label{display:block; margin-bottom:11px;}
+  .head h2{font-size:clamp(27px,3.4vw,40px); color:var(--ink);}
+  .head .more{font-weight:700; font-size:14px; color:var(--coral-deep); white-space:nowrap;}
+  .center-head{text-align:center; flex-direction:column; align-items:center; gap:0;}
+  .center-head .label{margin-bottom:13px;}
+  .center-head .sub{color:var(--ink2); max-width:600px; margin-top:13px;}
+
+  .row{display:grid; grid-template-columns:repeat(4,1fr); gap:30px;}
+  @media(max-width:880px){ .row{grid-template-columns:repeat(2,1fr); gap:28px 22px;} }
+  .book{display:flex; flex-direction:column;}
+  .book .cover{position:relative; aspect-ratio:2/3; border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 14px 30px rgba(31,46,44,.18); transition:transform .2s, box-shadow .2s;}
+  .book:hover .cover{transform:translateY(-7px); box-shadow:0 24px 44px rgba(31,46,44,.28);}
+  .book .cover img{width:100%; height:100%; object-fit:contain;}
+  .row.adults .book .cover{aspect-ratio:700/907;}
+  .badge{position:absolute; top:11px; left:11px; z-index:2; font-weight:700; font-size:11px; letter-spacing:.05em; padding:6px 12px; border-radius:999px; color:#fff; text-transform:uppercase;}
+  .badge.new{background:var(--coral)} .badge.best{background:var(--gold)} .badge.soon{background:var(--ink2)}
+  .ph{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:22px; color:#fff; gap:9px;}
+  .ph .pt{font-family:"Lora",serif; font-size:19px; line-height:1.18;}
+  .ph .ps{font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; opacity:.92;}
+  .ph.kind{background:linear-gradient(150deg,#19B3A2,#0E7E73)} .ph.epic{background:linear-gradient(150deg,#5C97D6,#3257A0)} .ph.tech{background:linear-gradient(150deg,#3D82F0,#22416F)}
+  .book .bmeta{padding-top:15px;}
+  .book .imp{font-weight:700; font-size:11px; letter-spacing:.08em; text-transform:uppercase;}
+  .imp.epic{color:var(--epic)} .imp.kind{color:var(--kind)} .imp.tech{color:var(--tech)}
+  .book h3{font-family:"Lora",serif; font-size:18px; margin:6px 0 4px; font-weight:600; line-height:1.22;}
+  .book .age{font-size:13.5px; color:var(--ink2);}
+  .book .order{display:inline-block; margin-top:11px; font-weight:700; font-size:13.5px; color:var(--coral-deep); border-bottom:1.5px solid transparent;}
+  .book .order:hover{border-color:var(--coral-deep)}
+  .book .soonmark{display:inline-block; margin-top:11px; font-weight:700; font-size:13px; color:var(--ink2);}
+
+  .spot{background:#EFE3CE;}
+  .block.sand{background:#EFE3CE;}
+  .spot .wrap{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding-top:68px; padding-bottom:68px;}
+  @media(max-width:880px){ .spot .wrap{grid-template-columns:1fr; gap:34px; text-align:center;} }
+  .spot .art{display:flex; justify-content:center; align-items:center;}
+  .spot .art img{width:262px; max-width:72%; height:auto; border-radius:9px; box-shadow:0 24px 46px rgba(31,46,44,.30);}
+  .spot h2{font-size:clamp(28px,3.6vw,42px); margin:13px 0 5px;}
+  .spot .by{color:var(--ink2); font-style:italic; font-family:"Lora",serif; margin-bottom:17px;}
+  .spot p{color:var(--ink); margin:0 0 24px;}
+  .spot p strong{font-weight:700;}
+
+  .cats{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  @media(max-width:680px){ .cats{grid-template-columns:repeat(2,1fr); gap:28px 18px;} }
+  .cat{text-align:center;}
+  .cat .circle{width:122px; height:122px; margin:0 auto 15px; border-radius:50%; background:#fff; border:1px solid var(--line); display:grid; place-items:center; transition:transform .18s, border-color .18s; box-shadow:0 10px 24px rgba(31,46,44,.07);}
+  .cat:hover .circle{transform:translateY(-5px); border-color:var(--coral);}
+  .cat .cname{font-family:"Lora",serif; font-size:18px;}
+  .cat .ccount{font-size:13px; color:var(--ink2); margin-top:2px;}
+
+  .imprints{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media(max-width:880px){ .imprints{grid-template-columns:1fr; max-width:480px; margin:0 auto;} }
+  .imp-card{background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:transform .18s, box-shadow .18s;}
+  .imp-card:hover{transform:translateY(-5px); box-shadow:0 22px 44px rgba(31,46,44,.14);}
+  .imp-card .bar{height:7px;}
+  .imp-card.kind .bar{background:var(--kind)} .imp-card.epic .bar{background:var(--epic)} .imp-card.tech .bar{background:var(--tech)}
+  .imp-card .ic{padding:28px 26px 26px; display:flex; flex-direction:column; flex:1;}
+  .imp-card .iname{font-family:"Lora",serif; font-size:24px; margin-bottom:4px; font-weight:600;}
+  .imp-card .ikind{font-weight:700; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); margin-bottom:13px;}
+  .imp-card p{margin:0 0 20px; color:var(--ink2); font-size:15px;}
+  .imp-card .ilink{margin-top:auto; font-weight:700; font-size:14px;}
+  .imp-card.kind .ilink{color:var(--kind)} .imp-card.epic .ilink{color:var(--epic)} .imp-card.tech .ilink{color:var(--tech)}
+  .imp-card .pending{margin-top:auto; font-weight:600; font-size:13.5px; color:var(--ink2); font-style:italic;}
+
+  .about{background:var(--ink); color:#efe9dd;}
+  .about .wrap{max-width:720px; margin:0 auto; text-align:center; padding-top:80px; padding-bottom:80px;}
+  .about .label{color:#e7a08f;}
+  .about .quote{font-family:"Lora",serif; font-style:italic; font-size:clamp(20px,2.2vw,26px); line-height:1.5; color:#f4efe4; margin:24px auto 0; max-width:640px; text-wrap:balance;}
+  .about p{color:#c8c8bd; margin:22px auto 0; max-width:580px; text-wrap:balance;}
+
+  .news{text-align:center;}
+  .news h2{font-size:clamp(26px,3.2vw,38px);}
+  .news p{color:var(--ink2); max-width:540px; margin:13px auto 24px;}
+  .news form{display:flex; gap:10px; max-width:480px; margin:0 auto; flex-wrap:wrap; justify-content:center;}
+  .news input{flex:1; min-width:220px; padding:14px 18px; border-radius:999px; border:1.5px solid var(--line); background:#fff; font-size:15px; font-family:inherit;}
+  .news input:focus{outline:none; border-color:var(--coral);}
+  .news .fineprint{font-size:12.5px; color:var(--ink2); margin-top:13px;}
+
+  footer{background:var(--paper2); border-top:1px solid var(--line); padding:58px 0 28px; font-size:15px;}
+  .foot-grid{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:36px;}
+  @media(max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr; gap:30px;} }
+  footer .fname{font-family:"Lora",serif; font-size:22px; margin-bottom:10px; font-weight:600;}
+  footer .fdesc{color:var(--ink2); max-width:280px;}
+  footer h4{font-family:"Inter",sans-serif; font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink2); margin:0 0 14px;}
+  footer ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  footer ul a{color:var(--ink); opacity:.85; font-weight:500;}
+  footer ul a:hover{color:var(--coral-deep); opacity:1;}
+  .foot-bottom{border-top:1px solid var(--line); margin-top:44px; padding-top:22px; color:var(--ink2); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 </style>
 </head>
 <body>
-  <div>
-    <h1>Coral Horizon House</h1>
-    <p>An independent publisher creating books kids actually want to read. Our first imprint is here:</p>
-    <a href="/epic-readers">Visit Epic Readers →</a>
+
+<div class="topbar">New release — <a href="https://www.amazon.com/dp/B0GXN8T6BP">Chapter Stories for 3rd Graders</a> is on the shelf.</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/">
+      <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="19" r="10.5" fill="#E2654F"/>
+        <path d="M5 32c4-3 7-3 9.5-1S20 34 24 34s5-2 9.5-3 6.5 0 9.5 3" stroke="#1F2E2C" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M6 40c4-3 7-3 9-1.4S20 41 24 41s5.5-1.8 9-3.4 6 0 9 2.6" stroke="#138577" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+      </svg>
+      <span class="name">Coral <b>Horizon</b> House</span>
+    </a>
+    <nav class="links">
+      <a href="#kids">For kids</a>
+      <a href="#grown">For grown-ups</a>
+      <a href="#imprints">Imprints</a>
+      <a class="nav-cta" href="#news">Join the list</a>
+    </nav>
   </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="label kicker">Independent Publishing House</span>
+      <h1>Beautiful, useful books <span class="accent">worth coming back to.</span></h1>
+      <p>For kids and grown-ups alike — warm stories, values that matter, and genuinely useful guides, made with intention and care.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#kids">Browse the books</a>
+        <a class="btn btn-outline" href="#imprints">Meet our imprints</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-book left side"><img src="books/faith-you-are-8.jpg" alt="You Are 8 and God Loves You"></div>
+      <div class="hero-book mid"><img src="books/epic-3rd-girls.jpg" alt="Chapter Stories for 3rd Graders"></div>
+      <div class="hero-book right side"><img src="books/epic-1st-boys.jpg" alt="Chapter Stories for 1st Graders — Boys Edition"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- FOR KIDS -->
+<section class="block" id="kids">
+  <div class="wrap">
+    <div class="head"><div class="htext"><span class="label">For kids &amp; young readers</span><h2>Fresh off the press</h2></div></div>
+    <div class="row">
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0GXN8T6BP"><span class="badge new">New</span><img src="books/epic-3rd-girls.jpg" alt="Chapter Stories for 3rd Graders — Girls Edition"></a>
+        <div class="bmeta"><div class="imp epic">Epic Readers</div><h3>Chapter Stories — 3rd Graders</h3><div class="age">Girls Edition · Ages 8–9</div><a class="order" href="https://www.amazon.com/dp/B0GXN8T6BP">Order your copy →</a></div>
+      </article>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0GZSQ7CNR"><span class="badge new">New</span><img src="books/epic-bilingual-1st.jpg" alt="Bilingual Short Stories for 1st Graders"></a>
+        <div class="bmeta"><div class="imp epic">Epic Readers</div><h3>Bilingual Short Stories — 1st Graders</h3><div class="age">Spanish · English · Ages 6–7</div><a class="order" href="https://www.amazon.com/dp/B0GZSQ7CNR">Order your copy →</a></div>
+      </article>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0GY76QD25"><span class="badge best">Bestseller</span><img src="books/epic-1st-boys.jpg" alt="Chapter Stories for 1st Graders — Boys Edition"></a>
+        <div class="bmeta"><div class="imp epic">Epic Readers</div><h3>Chapter Stories — 1st Graders</h3><div class="age">Boys Edition · Ages 6–7</div><a class="order" href="https://www.amazon.com/dp/B0GY76QD25">Order your copy →</a></div>
+      </article>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0GVB26YTG"><img src="books/faith-you-are-8.jpg" alt="You Are 8 and God Loves You"></a>
+        <div class="bmeta"><div class="imp kind">The Kind Way</div><h3>You Are 8 and God Loves You</h3><div class="age">Values · Ages 7–9</div><a class="order" href="https://www.amazon.com/dp/B0GVB26YTG">Order your copy →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="spot">
+  <div class="wrap">
+    <div class="art"><img src="books/epic-3rd-girls-full.jpg" alt="Chapter Stories for 3rd Graders — Girls Edition"></div>
+    <div class="txt">
+      <span class="label">Featured title</span>
+      <h2>Chapter Stories for 3rd Graders</h2>
+      <div class="by">Epic Readers · Girls Edition</div>
+      <p><strong>Twelve meaningful stories for girls ready for more — but not ready for thick, intimidating novels.</strong> Each tale runs across three short, carefully structured chapters, paired with comprehension questions and warm illustrations — a book that feels achievable, engaging, and genuinely fun to read.</p>
+      <a class="btn btn-primary" href="https://www.amazon.com/dp/B0GXN8T6BP">Order your copy</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOR GROWN-UPS -->
+<section class="block" id="grown">
+  <div class="wrap">
+    <div class="head"><div class="htext"><span class="label">Not just for kids</span><h2>For grown-ups, too</h2></div><a class="more" href="tech-savvy-guides/index.html">Visit Tech Savvy Guides →</a></div>
+    <div class="row adults">
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0G1S3PJZW"><span class="badge new">New</span><img src="books/tech-iphone17.jpg" alt="The Complete iPhone 17 Guide for Seniors"></a>
+        <div class="bmeta"><div class="imp tech">Tech Savvy Guides</div><h3>The Complete iPhone 17 Guide</h3><div class="age">For seniors · Large print</div><a class="order" href="https://www.amazon.com/dp/B0G1S3PJZW">Order your copy →</a></div>
+      </article>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0FBWNLN68"><img src="books/tech-iphone16.jpg" alt="The Complete iPhone 16 Guide for Seniors"></a>
+        <div class="bmeta"><div class="imp tech">Tech Savvy Guides</div><h3>The Complete iPhone 16 Guide</h3><div class="age">For seniors · Large print</div><a class="order" href="https://www.amazon.com/dp/B0FBWNLN68">Order your copy →</a></div>
+      </article>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0FR56V5N1"><img src="books/tech-macbook.jpg" alt="The Complete MacBook Guide for Seniors"></a>
+        <div class="bmeta"><div class="imp tech">Tech Savvy Guides</div><h3>The Complete MacBook Guide</h3><div class="age">For seniors · Large print</div><a class="order" href="https://www.amazon.com/dp/B0FR56V5N1">Order your copy →</a></div>
+      </article>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0FJ6KH4V1"><img src="books/tech-windows11.jpg" alt="The Complete Windows 11 Guide for Seniors"></a>
+        <div class="bmeta"><div class="imp tech">Tech Savvy Guides</div><h3>The Complete Windows 11 Guide</h3><div class="age">For seniors · Large print</div><a class="order" href="https://www.amazon.com/dp/B0FJ6KH4V1">Order your copy →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BROWSE BY CATEGORY -->
+<section class="block sand">
+  <div class="wrap">
+    <div class="head center-head"><span class="label">Find your next read</span><h2>Browse by category</h2></div>
+    <div class="cats">
+      <a class="cat" href="#kids">
+        <div class="circle"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#3F73B8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="9" width="24" height="30" rx="2.5"/><path d="M18 17h12M18 23h12M18 29h7"/></svg></div>
+        <div class="cname">Chapter Books</div><div class="ccount">Epic Readers</div>
+      </a>
+      <a class="cat" href="#kids">
+        <div class="circle"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#138577" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 41s-13-7-13-18a7 7 0 0 1 13-3 7 7 0 0 1 13 3c0 11-13 18-13 18Z"/></svg></div>
+        <div class="cname">Values &amp; Faith</div><div class="ccount">The Kind Way</div>
+      </a>
+      <a class="cat" href="#kids">
+        <div class="circle"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#C8533D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="15"/><path d="M9 24h30M24 9c4 4 6 9.5 6 15s-2 11-6 15c-4-4-6-9.5-6-15s2-11 6-15Z"/></svg></div>
+        <div class="cname">Bilingual</div><div class="ccount">Spanish · English</div>
+      </a>
+      <a class="cat" href="tech-savvy-guides/index.html">
+        <div class="circle"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#2E4C7E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="12" width="30" height="20" rx="2.5"/><path d="M6 38h36"/></svg></div>
+        <div class="cname">For Grown-ups</div><div class="ccount">Tech Savvy Guides</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- IMPRINTS -->
+<section class="block" id="imprints">
+  <div class="wrap">
+    <div class="head center-head"><span class="label">One house, distinct voices</span><h2>Our imprints</h2><p class="sub">Each imprint is written for a specific reader — held to the same standard of care and quality.</p></div>
+    <div class="imprints">
+      <article class="imp-card kind">
+        <div class="bar"></div>
+        <div class="ic"><div class="ikind">Children · Values</div><div class="iname">The Kind Way</div><p>Books that teach children kindness, empathy, and values — religious and non-religious, with editions in both Spanish and English.</p><span class="pending">Imprint page coming soon</span></div>
+      </article>
+      <article class="imp-card epic">
+        <div class="bar"></div>
+        <div class="ic"><div class="ikind">Children · English</div><div class="iname">Epic Readers</div><p>Chapter Stories that turn early reading into a confident habit — short chapters, friendly art, comprehension built in.</p><a class="ilink" href="epic-readers/index.html">Visit Epic Readers →</a></div>
+      </article>
+      <article class="imp-card tech">
+        <div class="bar"></div>
+        <div class="ic"><div class="ikind">How-to · For grown-ups</div><div class="iname">Tech Savvy Guides</div><p>Plain-English guides that make technology simple — iPhone, MacBook, and Windows, explained step by step in large print.</p><a class="ilink" href="tech-savvy-guides/index.html">Visit Tech Savvy Guides →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- COMING SOON -->
+<section class="block sand">
+  <div class="wrap">
+    <div class="head"><div class="htext"><span class="label">On the way</span><h2>Coming soon</h2></div></div>
+    <div class="row">
+      <article class="book">
+        <div class="cover"><span class="badge soon">Soon</span><img src="books/epic-2nd.jpg" alt="Chapter Stories for 2nd Graders"></div>
+        <div class="bmeta"><div class="imp epic">Epic Readers</div><h3>Chapter Stories — 2nd Graders</h3><div class="age">New editions · Ages 7–8</div><span class="soonmark">Coming soon</span></div>
+      </article>
+      <article class="book">
+        <div class="cover"><span class="badge soon">Soon</span><img src="books/kind-tienes-9.jpg" alt="Tienes 9 años y eres increíble"></div>
+        <div class="bmeta"><div class="imp kind">The Kind Way</div><h3>Tienes 9 años y eres increíble</h3><div class="age">Español · Edades 8–10</div><span class="soonmark">Coming soon</span></div>
+      </article>
+      <article class="book">
+        <div class="cover"><span class="badge soon">Soon</span><img src="books/lifeskills-9.jpg" alt="Life Skills Guide for 9-Year-Old Girls"></div>
+        <div class="bmeta"><div class="imp kind">The Kind Way</div><h3>Life Skills Guide — 9-Year-Old Girls</h3><div class="age">Confidence · Ages 8–10</div><span class="soonmark">Coming soon</span></div>
+      </article>
+      <article class="book">
+        <div class="cover"><span class="badge soon">Soon</span><div class="ph kind"><div class="pt">My First Communion</div><div class="ps">Boys Edition</div></div></div>
+        <div class="bmeta"><div class="imp kind">The Kind Way</div><h3>My First Communion — Boys</h3><div class="age">Keepsake · Ages 6–9</div><span class="soonmark">Coming soon</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="label">About the house</span>
+    <p class="quote">"Every Coral Horizon House book is made with one question in mind — will the reader be glad they picked it up?"</p>
+    <p>No filler, no hype. We're an independent publisher that cares about craft: stories that stick, values worth keeping, and guides that actually solve the problem.</p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="block news" id="news">
+  <div class="wrap">
+    <span class="label">Stay in the loop</span>
+    <h2>New books, free resources, early access</h2>
+    <p>Join the Coral Horizon House list and be first to know about new releases and reader freebies.</p>
+    <form onsubmit="return false">
+      <input type="email" placeholder="Your email address" aria-label="Email address" required>
+      <button class="btn btn-primary" type="submit">Sign me up</button>
+    </form>
+    <div class="fineprint">No spam — just new books and the occasional freebie. Unsubscribe anytime.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="fname">Coral Horizon House</div>
+        <p class="fdesc">An independent publisher of beautiful, useful books for kids, families, and grown-ups.</p>
+      </div>
+      <div><h4>Imprints</h4><ul><li><a href="#imprints">The Kind Way</a></li><li><a href="epic-readers/index.html">Epic Readers</a></li><li><a href="tech-savvy-guides/index.html">Tech Savvy Guides</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#kids">For kids</a></li><li><a href="#grown">For grown-ups</a></li><li><a href="#news">Newsletter</a></li></ul></div>
+      <div><h4>Connect</h4><ul><li><a href="mailto:hello@coralhorizonhouse.com">Email us</a></li><li><a href="#news">Join the list</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Coral Horizon House. All rights reserved.</span><span>Made with care for readers everywhere.</span></div>
+  </div>
+</footer>
+
 </body>
 </html>

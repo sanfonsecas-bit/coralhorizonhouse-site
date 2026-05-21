@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your free iPhone 17 bonus — Tech Savvy Guides</title>
+<meta name="description" content="Get your free printable bonus for The Complete iPhone 17 Guide for Seniors. Enter your email and we'll send it right away.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../lead.css">
+</head>
+<body>
+
+<header class="lp-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="19" r="10.5" fill="#E2654F"/>
+        <path d="M5 32c4-3 7-3 9.5-1S20 34 24 34s5-2 9.5-3 6.5 0 9.5 3" stroke="#1F2E2C" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M6 40c4-3 7-3 9-1.4S20 41 24 41s5.5-1.8 9-3.4 6 0 9 2.6" stroke="#138577" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+      </svg>
+      <div><div class="name">Coral <b>Horizon</b> House</div><div class="imprint">Tech Savvy Guides</div></div>
+    </a>
+    <a class="back" href="../index.html">← All guides</a>
+  </div>
+</header>
+
+<main class="lp">
+  <div class="wrap lp-grid">
+    <div class="lp-cover"><img src="../../books/tech-iphone17.jpg" alt="The Complete iPhone 17 Guide for Seniors"></div>
+    <div class="lp-copy">
+      <span class="eyebrow">Free bonus · iPhone 17 Guide</span>
+      <h1>Your free iPhone 17 bonus <span class="accent">is ready.</span></h1>
+      <p class="lede">Thanks for choosing <em>The Complete iPhone 17 Guide</em>. Enter your email and we'll send your printable bonus right away.</p>
+      <ul class="gifts">
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EAF0F8"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#2E4C7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><b>Fix Common Problems</b> — a simple guide to solving the most common iPhone 17 issues, step by step.</span>
+        </li>
+      </ul>
+      <div class="formcard">
+        <div class="ftitle">Where should we send it?</div>
+        <div class="fsub">Enter your email and your bonus is yours.</div>
+        <form id="signup-form" action="https://app.kit.com/forms/9470466/subscriptions" method="post">
+          <input type="hidden" name="fields[guide]" value="iphone-17">
+          <div class="field"><label for="firstName">First name (optional)</label><input id="firstName" name="fields[first_name]" type="text" placeholder="Your first name"></div>
+          <div class="field"><label for="email_address">Email *</label><input id="email_address" name="email_address" type="email" required placeholder="you@email.com"></div>
+          <button type="submit" class="btn-submit">Send me my bonus →</button>
+          <p class="fine">No spam — just your bonus and the occasional new guide. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="lp-footer">
+  <div class="wrap">
+    <span>© 2026 Coral Horizon House · Tech Savvy Guides</span>
+    <span><a href="../index.html">All guides</a> · <a href="../../index.html">Coral Horizon House</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('signup-form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type="submit"]');
+    if(btn){btn.disabled=true; btn.textContent='Sending…';}
+    var data=new FormData(form);
+    fetch(form.action,{method:'POST',body:data,mode:'no-cors'})
+      .catch(function(){})
+      .finally(function(){ window.location.href='thank-you/index.html'; });
+  });
+})();
+</script>
+</body>
+</html>
