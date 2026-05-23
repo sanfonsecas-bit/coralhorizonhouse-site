@@ -1,6 +1,14 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": "epicreaders.coralhorizonhouse.com" }
+      ],
+      "destination": "https://coralhorizonhouse.com/",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [
         { "type": "host", "value": "epicreaders.coralhorizonhouse.com" }
