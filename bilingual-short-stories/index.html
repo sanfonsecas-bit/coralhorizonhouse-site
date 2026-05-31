@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilingual Short Stories — Spanish + English for early readers · Epic Readers</title>
+<meta name="description" content="Short Spanish-English stories that turn learning a new language into an adventure. Side-by-side Spanish and English, simple words, big confidence. An Epic Readers collection from Coral Horizon House.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF7EE; --paper2:#F3EADB; --ink:#1F2E2C; --ink2:#5E6F6C; --line:#E6DAC6;
+    --coral:#E2654F; --coral-deep:#C8533D;
+    --green:#66B946; --green-deep:#3F8B2C; --green-darker:#2E6D1F; --green-soft:#E9F5DD;
+    --navy:#1B3A66; --red:#E04A3A; --gold:#F3A638;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:"Inter",system-ui,sans-serif; font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:"Lora",Georgia,serif; font-weight:600; line-height:1.16; margin:0;}
+  a{color:inherit; text-decoration:none}
+  img{max-width:100%; display:block}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .label{font-family:"Inter",sans-serif; font-weight:700; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--green-deep);}
+  .rule{height:1px; background:var(--line); border:0; margin:0;}
+  section[id]{scroll-margin-top:96px;}
+
+  .topbar{background:var(--green-darker); color:#eef7e6; text-align:center; font-size:13.5px; padding:10px 16px; font-weight:500;}
+  .topbar a{color:#fff; border-bottom:1px solid rgba(255,255,255,.5);}
+
+  header.nav{position:sticky; top:0; z-index:60; background:rgba(250,247,238,.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .name{font-family:"Lora",serif; font-weight:600; font-size:20px; color:var(--ink);}
+  .brand .name b{font-weight:600; color:var(--coral);}
+  .brand .sub{font-family:"Inter",sans-serif; font-weight:700; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--green-deep); margin-top:2px;}
+  nav.links{display:flex; gap:28px; align-items:center}
+  nav.links a{font-weight:600; font-size:14.5px; color:var(--ink); opacity:.82;}
+  nav.links a:hover{opacity:1; color:var(--green-deep);}
+  .nav-cta{border:1.5px solid var(--green-deep); border-radius:999px; padding:9px 18px !important; font-size:13.5px !important; opacity:1 !important; color:var(--green-deep) !important;}
+  .nav-cta:hover{background:var(--green-deep); color:#fff !important;}
+  @media(max-width:880px){ nav.links a:not(.nav-cta){display:none} }
+
+  .btn{display:inline-flex; align-items:center; gap:9px; font-weight:700; font-size:15px; padding:14px 26px; border-radius:999px; transition:transform .15s, background .15s, color .15s; cursor:pointer; border:1.5px solid transparent;}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-green{background:var(--green-deep); color:#fff;}
+  .btn-green:hover{background:var(--green-darker);}
+  .btn-outline{border-color:var(--ink); color:var(--ink);}
+  .btn-outline:hover{background:var(--ink); color:var(--paper);}
+
+  /* HERO */
+  .hero{padding:64px 0 70px;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:54px; align-items:center;}
+  @media(max-width:900px){ .hero-grid{grid-template-columns:1fr; gap:46px; text-align:center;} }
+  .hero .kicker{display:inline-block; margin-bottom:18px;}
+  .hero h1{font-size:clamp(34px,4.6vw,56px); font-weight:600; color:var(--ink); max-width:18ch; line-height:1.12;}
+  @media(max-width:900px){ .hero h1{margin:0 auto;} }
+  .hero h1 .accent{color:var(--green-deep);}
+  .hero p{font-size:clamp(16.5px,1.5vw,19px); color:var(--ink2); max-width:520px; margin:20px 0 30px;}
+  @media(max-width:900px){ .hero p{margin-left:auto; margin-right:auto;} }
+  .hero .btns{display:flex; gap:13px; flex-wrap:wrap;}
+  @media(max-width:900px){ .hero .btns{justify-content:center;} }
+  .hero-art{display:flex; justify-content:center; align-items:center; padding:14px 0;}
+  .hero-cover{transition:transform .35s cubic-bezier(.2,.7,.3,1);}
+  .hero-cover img{width:auto; max-width:100%; height:auto; border-radius:11px; box-shadow:0 28px 56px rgba(31,46,44,.30);}
+  .hero-cover img{height:clamp(360px, 46vw, 520px);}
+  .hero-cover:hover{transform:translateY(-8px) scale(1.02);}
+  @media(max-width:480px){ .hero-cover img{height:340px;} }
+
+  section.block{padding:62px 0;}
+  .block.soft{background:var(--green-soft);}
+  .head{display:flex; align-items:baseline; justify-content:space-between; gap:18px; margin-bottom:32px;}
+  .head .htext .label{display:block; margin-bottom:11px;}
+  .head h2{font-size:clamp(27px,3.4vw,40px); color:var(--ink);}
+  .center-head{text-align:center; flex-direction:column; align-items:center; gap:0;}
+  .center-head .label{margin-bottom:13px;}
+  .center-head .sub{color:var(--ink2); max-width:620px; margin-top:13px;}
+
+  /* WHY - 3 little stanzas */
+  .stanzas{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
+  @media(max-width:880px){ .stanzas{grid-template-columns:1fr; gap:30px; max-width:540px; margin:0 auto;} }
+  .stanza{text-align:center;}
+  .stanza .num{display:inline-flex; width:48px; height:48px; align-items:center; justify-content:center; border-radius:50%; background:var(--green); color:#fff; font-family:"Lora",serif; font-weight:600; font-size:22px; margin-bottom:18px; box-shadow:0 10px 22px rgba(63,139,44,.30);}
+  .stanza p{margin:0; color:var(--ink); font-family:"Lora",serif; font-style:italic; font-size:18px; line-height:1.5; max-width:30ch; margin:0 auto;}
+
+  /* TAGLINE BAND */
+  .band{background:var(--green-deep); color:#fff; padding:44px 0;}
+  .band .wrap{text-align:center;}
+  .band h2{font-family:"Lora",serif; font-weight:600; font-size:clamp(26px,3.4vw,42px); color:#fff; letter-spacing:.01em;}
+  .band .accent{color:#FFE9A3;}
+
+  /* FREE WORKBOOK */
+  .block.wb{ background:var(--green-soft); }
+  .wb-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:48px; align-items:center; margin-top:18px; }
+  @media(max-width:880px){ .wb-grid{ grid-template-columns:1fr; gap:34px; text-align:center; } }
+  .wb-cover{ display:flex; justify-content:center; }
+  .wb-cover img{ width:280px; max-width:80%; border-radius:10px; box-shadow:0 24px 48px rgba(31,46,44,.22); }
+  .wb-form{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:28px 30px; max-width:520px; }
+  @media(max-width:880px){ .wb-form{ margin:0 auto; } }
+  .wb-checks{ display:flex; flex-direction:column; gap:9px; margin-bottom:20px; text-align:left; }
+  .wb-checks > div{ display:flex; gap:11px; align-items:flex-start; font-size:15px; color:var(--ink); }
+  .wb-checks svg{ flex:0 0 auto; margin-top:3px; }
+  .wb-form .ftitle{ font-family:"Lora",serif; font-size:20px; font-weight:600; margin-bottom:6px; color:var(--ink); }
+  .wb-form .fsub{ font-size:14px; color:var(--ink2); margin-bottom:18px; }
+  .wb-form .field{ margin-bottom:13px; }
+  .wb-form label{ display:block; font-weight:600; font-size:13px; color:var(--ink2); margin-bottom:5px; }
+  .wb-form input{ width:100%; padding:12px 15px; border:1.5px solid var(--line); border-radius:11px; font-size:15px; font-family:inherit; background:var(--paper); }
+  .wb-form input:focus{ outline:none; border-color:var(--green-deep); background:#fff; }
+  .wb-form button{ width:100%; cursor:pointer; border:0; margin-top:4px; }
+  .wb-fine{ font-size:12px; color:var(--ink2); margin:11px 0 0; text-align:center; }
+  .wb-success{ text-align:center; padding:8px 0; }
+  .wb-success .icon{ width:60px; height:60px; border-radius:50%; background:var(--green-soft); display:grid; place-items:center; margin:0 auto 16px; }
+  .wb-success h3{ font-family:"Lora",serif; font-size:24px; color:var(--green-deep); margin-bottom:10px; }
+  .wb-success p{ color:var(--ink2); margin-bottom:20px; }
+
+  /* HOW THE BOOK WORKS */
+  .how-grid{display:grid; grid-template-columns:1fr 1fr; gap:54px; align-items:center;}
+  @media(max-width:880px){ .how-grid{grid-template-columns:1fr; gap:36px;} }
+  .how-img{display:flex; justify-content:center;}
+  .how-img .mock{background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px; box-shadow:0 22px 44px rgba(31,46,44,.12); max-width:420px; width:100%;}
+  .mock .row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .mock .col{}
+  .mock .lang{font-family:"Inter",sans-serif; font-weight:700; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--green-deep); margin-bottom:9px;}
+  .mock .col.es .lang{color:var(--red);}
+  .mock p{margin:0 0 12px; font-family:"Lora",serif; font-size:15.5px; line-height:1.55; color:var(--ink);}
+  .mock .divider{height:1px; background:var(--line); margin:14px 0 12px;}
+  .how-copy h2{margin-bottom:16px;}
+  .how-copy p{color:var(--ink2); margin:0 0 14px;}
+  .how-copy .age{display:inline-block; margin-top:8px; padding:7px 14px; border-radius:999px; background:var(--green-soft); color:var(--green-darker); font-weight:700; font-size:13px; letter-spacing:.04em;}
+
+  /* FEATURED BOOK */
+  .feat{background:#fff;}
+  .feat .wrap{display:grid; grid-template-columns:0.85fr 1.15fr; gap:54px; align-items:center; padding-top:68px; padding-bottom:68px;}
+  @media(max-width:880px){ .feat .wrap{grid-template-columns:1fr; gap:36px; text-align:center;} }
+  .feat .art{display:flex; justify-content:center;}
+  .feat .art img{width:300px; max-width:80%; border-radius:10px; box-shadow:0 24px 50px rgba(31,46,44,.30);}
+  .feat .txt h2{font-size:clamp(28px,3.4vw,40px); margin:13px 0 6px;}
+  .feat .by{color:var(--ink2); font-style:italic; font-family:"Lora",serif; margin-bottom:18px;}
+  .feat p{color:var(--ink); margin:0 0 24px;}
+  .feat .meta{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:22px; color:var(--ink2); font-size:14.5px;}
+  .feat .meta span{display:inline-flex; align-items:center; gap:6px;}
+  .feat .meta b{color:var(--ink); font-weight:600;}
+
+  /* COMING SOON */
+  .soon-list{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:840px; margin:0 auto;}
+  @media(max-width:680px){ .soon-list{grid-template-columns:1fr; max-width:380px;} }
+  .soon-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px 22px; text-align:center; transition:transform .18s, box-shadow .18s, border-color .18s;}
+  .soon-card:hover{transform:translateY(-4px); box-shadow:0 18px 36px rgba(31,46,44,.10); border-color:var(--green);}
+  .soon-card .grade{font-family:"Lora",serif; font-size:22px; font-weight:600; color:var(--green-deep);}
+  .soon-card .note{font-size:13.5px; color:var(--ink2); margin-top:6px;}
+  .soon-card .pill{display:inline-block; margin-top:12px; padding:4px 11px; border-radius:999px; background:var(--green-soft); color:var(--green-darker); font-weight:700; font-size:11px; letter-spacing:.08em; text-transform:uppercase;}
+
+  /* ABOUT */
+  .about{background:var(--ink); color:#efe9dd;}
+  .about .wrap{max-width:720px; margin:0 auto; text-align:center; padding-top:80px; padding-bottom:80px;}
+  .about .label{color:#A6E287;}
+  .about .quote{font-family:"Lora",serif; font-style:italic; font-size:clamp(20px,2.2vw,26px); line-height:1.5; color:#f4efe4; margin:24px auto 0; max-width:640px;}
+  .about p{color:#c8c8bd; margin:22px auto 0; max-width:580px;}
+
+  footer{background:var(--paper2); border-top:1px solid var(--line); padding:58px 0 28px; font-size:15px;}
+  .foot-grid{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:36px;}
+  @media(max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr; gap:30px;} }
+  footer .fname{font-family:"Lora",serif; font-size:22px; margin-bottom:10px; font-weight:600;}
+  footer .fdesc{color:var(--ink2); max-width:280px;}
+  footer h4{font-family:"Inter",sans-serif; font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink2); margin:0 0 14px;}
+  footer ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  footer ul a{color:var(--ink); opacity:.85; font-weight:500;}
+  footer ul a:hover{color:var(--green-deep); opacity:1;}
+  .foot-bottom{border-top:1px solid var(--line); margin-top:44px; padding-top:22px; color:var(--ink2); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">A <a href="../epic-readers/index.html">Epic Readers</a> collection — Spanish &amp; English, side by side.</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html">
+      <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="19" r="10.5" fill="#E2654F"/>
+        <path d="M5 32c4-3 7-3 9.5-1S20 34 24 34s5-2 9.5-3 6.5 0 9.5 3" stroke="#1F2E2C" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M6 40c4-3 7-3 9-1.4S20 41 24 41s5.5-1.8 9-3.4 6 0 9 2.6" stroke="#138577" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+      </svg>
+      <div>
+        <div class="name">Coral <b>Horizon</b> House</div>
+        <div class="sub">Bilingual Short Stories</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#why">How it works</a>
+      <a href="#workbook">Free workbook</a>
+      <a href="#book">The book</a>
+      <a href="#soon">Coming soon</a>
+      <a class="nav-cta" href="https://www.amazon.com/dp/B0GZSQ7CNR">Get the book</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="label kicker">An Epic Readers collection · Spanish + English</span>
+      <h1>What if learning a new language <span class="accent">felt like an adventure?</span></h1>
+      <p>Short stories where Spanish and English sit side by side — so kids follow along, guess meanings, and grow confident in two languages without even noticing they're learning.</p>
+      <div class="btns">
+        <a class="btn btn-green" href="https://www.amazon.com/dp/B0GZSQ7CNR">Get the book →</a>
+        <a class="btn btn-outline" href="#workbook">Free workbook →</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-cover"><img src="../books/epic-bilingual-1st.jpg" alt="Spanish-English Bilingual Short Stories for 1st Graders"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- WHY / 3 stanzas -->
+<section class="block" id="why">
+  <div class="wrap">
+    <div class="head center-head"><span class="label">Imagine this</span><h2>How it feels to read it</h2></div>
+    <div class="stanzas">
+      <div class="stanza">
+        <span class="num">1</span>
+        <p>You open a book and suddenly you understand words in two languages.</p>
+      </div>
+      <div class="stanza">
+        <span class="num">2</span>
+        <p>You read a sentence in English and recognize it in Spanish.</p>
+      </div>
+      <div class="stanza">
+        <span class="num">3</span>
+        <p>You follow a story and realize you didn't need help this time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE BAND -->
+<section class="band">
+  <div class="wrap">
+    <h2>Short stories. Simple words. <span class="accent">Big confidence.</span></h2>
+  </div>
+</section>
+
+<!-- FREE WORKBOOK -->
+<section class="block wb" id="workbook">
+  <div class="wrap">
+    <div class="head center-head">
+      <span class="label">Free workbook · Bonus</span>
+      <h2>Take the adventure off the page.</h2>
+      <p class="sub">A free 20-page printable workbook for kids who love the book — jungle animal exercises in Spanish &amp; English, coloring pages, and a diploma at the end. Yours when you join the list.</p>
+    </div>
+    <div class="wb-grid">
+      <div class="wb-cover"><img src="workbook-cover.jpg" alt="Jungle Friends Workbook cover"></div>
+      <div class="wb-form">
+        <div class="wb-checks">
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#E9F5DD"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#3F8B2C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><b>20 printable pages</b> of bilingual jungle exercises</span></div>
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#E9F5DD"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#3F8B2C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><b>10 cute animals</b> to meet, color, and label in both languages</span></div>
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#E9F5DD"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#3F8B2C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Word search, trace, translate, count and more</span></div>
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#E9F5DD"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#3F8B2C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><b>A diploma</b> at the end so kids feel proud of their progress</span></div>
+        </div>
+        <div class="ftitle">Where should we send it?</div>
+        <div class="fsub">Enter your email and the workbook is yours.</div>
+        <form id="wb-form" action="https://app.kit.com/forms/9454239/subscriptions" method="post">
+          <input type="hidden" name="fields[grade]" value="1st bilingual workbook">
+          <div class="field"><label for="wb-first">First name (optional)</label><input id="wb-first" name="fields[first_name]" type="text" placeholder="Your first name"></div>
+          <div class="field"><label for="wb-email">Email *</label><input id="wb-email" name="email_address" type="email" required placeholder="you@email.com"></div>
+          <button class="btn btn-green" type="submit">Send me the workbook →</button>
+          <p class="wb-fine">No spam — just your workbook and the occasional new story. Unsubscribe anytime.</p>
+        </form>
+        <div class="wb-success" hidden>
+          <div class="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3F8B2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>
+          <h3>Your workbook is ready!</h3>
+          <p>Tap below to download — we've also emailed you a copy. Check your inbox (and spam folder, just in case).</p>
+          <a class="btn btn-green" href="../workbook-jungle/jungle-friends-workbook.pdf" download>Download the workbook (PDF) →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW THE BOOK WORKS -->
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="how-grid">
+      <div class="how-img">
+        <div class="mock">
+          <div class="row">
+            <div class="col es"><div class="lang">Español</div>
+              <p>El perro corre por el parque.</p>
+              <p>Ve un globo rojo en el cielo.</p>
+              <p>«¡Qué bonito!», piensa.</p>
+            </div>
+            <div class="col en"><div class="lang">English</div>
+              <p>The dog runs through the park.</p>
+              <p>He sees a red balloon in the sky.</p>
+              <p>"How beautiful!", he thinks.</p>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div style="text-align:center; font-family:'Lora',serif; font-style:italic; font-size:13px; color:#5E6F6C;">Side by side — easy to follow, easy to learn.</div>
+        </div>
+      </div>
+      <div class="how-copy">
+        <span class="label">How the book works</span>
+        <h2>Spanish and English, side by side.</h2>
+        <p>Each story appears in both languages on the same spread, so children can read in their stronger language and naturally pick up the other — guessing meanings from the context, recognizing new words, and building confidence one page at a time.</p>
+        <p>No drills. No flashcards. Just stories worth coming back to.</p>
+        <span class="age">Perfect for kids ages 6–7</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED BOOK -->
+<section class="feat" id="book">
+  <div class="wrap">
+    <div class="art"><img src="../books/epic-bilingual-1st.jpg" alt="Spanish-English Bilingual Short Stories for 1st Graders"></div>
+    <div class="txt">
+      <span class="label">Available now</span>
+      <h2>Spanish-English Bilingual Short Stories</h2>
+      <div class="by">First Graders edition · Epic Readers</div>
+      <p>Twelve short adventures for kids who are starting their reading journey, exploring a second language, or growing up bilingual. Spanish and English sit side by side, with friendly illustrations and simple words that build confidence naturally.</p>
+      <div class="meta">
+        <span><b>Ages</b> 6–7</span>
+        <span><b>Languages</b> Spanish &amp; English</span>
+        <span><b>Format</b> Paperback</span>
+      </div>
+      <a class="btn btn-green" href="https://www.amazon.com/dp/B0GZSQ7CNR">Order on Amazon →</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="block soft" id="soon">
+  <div class="wrap">
+    <div class="head center-head"><span class="label">More grades on the way</span><h2>The collection is growing</h2><p class="sub">The First Graders edition is just the start. New grades are in the works so the adventure can keep going as kids grow.</p></div>
+    <div class="soon-list">
+      <div class="soon-card"><div class="grade">2nd Graders</div><div class="note">Spanish &amp; English · Ages 7–8</div><span class="pill">Coming soon</span></div>
+      <div class="soon-card"><div class="grade">3rd Graders</div><div class="note">Spanish &amp; English · Ages 8–9</div><span class="pill">Coming soon</span></div>
+      <div class="soon-card"><div class="grade">4th Graders</div><div class="note">Spanish &amp; English · Ages 9–10</div><span class="pill">Coming soon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="wrap">
+    <span class="label">Ready to start the adventure?</span>
+    <p class="quote">"Bilingual Short Stories is an Epic Readers collection — made for kids who love a good story, in any language they're learning to love."</p>
+    <p>An imprint of Coral Horizon House, dedicated to making the early-reading years something kids — and parents — actually look forward to.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="fname">Bilingual Short Stories</div>
+        <p class="fdesc">Spanish &amp; English short stories that turn learning a new language into an adventure. An Epic Readers collection from Coral Horizon House.</p>
+      </div>
+      <div><h4>The collection</h4><ul><li><a href="#book">The book</a></li><li><a href="#workbook">Free workbook</a></li><li><a href="#why">How it works</a></li><li><a href="#soon">Coming soon</a></li></ul></div>
+      <div><h4>Imprint</h4><ul><li><a href="../epic-readers/index.html">Epic Readers</a></li><li><a href="../index.html">Coral Horizon House</a></li></ul></div>
+      <div><h4>Connect</h4><ul><li><a href="mailto:hello@coralhorizonhouse.com">Email us</a></li><li><a href="https://www.amazon.com/dp/B0GZSQ7CNR">On Amazon</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Coral Horizon House. All rights reserved.</span><span>Bilingual Short Stories — an Epic Readers collection.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('wb-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+    var data = new FormData(form);
+    fetch(form.action, {method:'POST', body:data, mode:'no-cors'})
+      .catch(function(){})
+      .finally(function(){
+        form.hidden = true;
+        var s = document.querySelector('.wb-success');
+        if (s) s.hidden = false;
+      });
+  });
+})();
+</script>
+</body>
+</html>

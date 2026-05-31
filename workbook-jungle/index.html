@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jungle Friends — A 1st Grade Bilingual Workbook · Epic Readers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FCF8F0; --paper2:#F3EADB; --line:#E6DAC6;
+    --ink:#1F2E2C; --ink2:#5E6F6C;
+    --green:#66B946; --green-deep:#3F8B2C; --green-darker:#2E6D1F; --green-soft:#E9F5DD;
+    --navy:#1B3A66; --navy-deep:#102648;
+    --red:#BF373E; --red-soft:#FBE2DF;
+    --gold:#F3A638; --gold-soft:#FCEBC8;
+    --purple:#9B4FC7; --purple-soft:#EFE3F7;
+    --coral:#E2654F;
+  }
+  @page { size: letter; margin: 0; }
+  *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html, body { margin:0; padding:0; background:#fff; }
+  body{ font-family:"Nunito", system-ui, sans-serif; color:var(--ink); font-size:14pt; line-height:1.5; }
+  h1,h2,h3,h4{ font-family:"Fredoka", system-ui, sans-serif; font-weight:600; line-height:1.1; margin:0; }
+
+  .page{
+    width:8.5in; height:11in; padding:0.6in 0.6in 0.4in;
+    background:var(--paper);
+    page-break-after:always; position:relative; overflow:hidden;
+  }
+  .page:last-child{ page-break-after:auto; }
+
+  /* page footer */
+  .pf{ position:absolute; left:0.6in; right:0.6in; bottom:0.25in; display:flex; justify-content:space-between; align-items:center; font-size:9pt; color:var(--ink2); }
+  .pf .imp{ font-family:"Fredoka",sans-serif; font-weight:500; }
+  .pf .pn{ display:inline-flex; width:30px; height:30px; align-items:center; justify-content:center; border-radius:50%; background:var(--green-deep); color:#fff; font-family:"Fredoka",sans-serif; font-weight:600; font-size:12pt; }
+  .deco-dots::before, .deco-dots::after{
+    content:""; position:absolute; width:14px; height:14px; border-radius:50%; background:var(--gold);
+  }
+  .deco-dots::before{ top:0.5in; left:0.5in; box-shadow: 24px 14px 0 var(--red), 12px 36px 0 var(--green); }
+  .deco-dots::after{ bottom:0.6in; right:0.6in; background:var(--purple); box-shadow: -22px -10px 0 var(--navy), -38px 20px 0 var(--gold); }
+  .star{ position:absolute; color:var(--purple); font-family:"Fredoka",sans-serif; font-weight:700; }
+
+  /* small atoms */
+  .badge{ display:inline-block; padding:8px 18px; border-radius:999px; background:var(--gold); color:var(--navy-deep); font-family:"Fredoka",sans-serif; font-weight:600; font-size:13pt; }
+  .pill{ display:inline-block; padding:5px 13px; border-radius:999px; font-family:"Fredoka",sans-serif; font-weight:600; font-size:10pt; letter-spacing:.04em; }
+  .pill.es{ background:var(--red-soft); color:var(--red); } .pill.en{ background:var(--green-soft); color:var(--green-deep); }
+  .pill.navy{ background:#E5ECF6; color:var(--navy); }
+  .dashed{ border:2px dashed var(--green); border-radius:14px; padding:14px 18px; }
+  .write-line{ border-bottom:2px dotted #B8AE93; height:1.6em; }
+  .vline{ border-bottom:2px solid var(--ink); height:1.6em; }
+
+  /* Epic Readers logo (compact, matches the green badge on cover) */
+  .er-logo{ width:88px; height:106px; display:block; }
+  .er-logo .bg{ fill:var(--green-deep); }
+  .er-logo .ship{ fill:#fff; }
+  .er-text{ font-family:"Fredoka",sans-serif; font-weight:700; fill:#fff; font-size:14px; letter-spacing:.06em; }
+
+  /* PAGE 1 — COVER */
+  .cover{ background:var(--paper); display:flex; flex-direction:column; align-items:center; text-align:center; padding-top:0.55in; }
+  .cover .logo{ margin-bottom:6px; }
+  .cover .presents{ font-family:"Caveat",cursive; font-size:18pt; color:var(--ink2); margin-bottom:8px; }
+  .cover h1.title-en{ font-family:"Fredoka",sans-serif; font-weight:700; font-size:66pt; color:var(--green-deep); letter-spacing:.01em; line-height:.98; }
+  .cover h2.title-es{ font-family:"Caveat",cursive; font-weight:700; font-size:42pt; color:var(--navy); margin-top:-4px; }
+  .cover .grade{ margin-top:14px; }
+  .cover .scene{ margin-top:18px; max-height:3.6in; }
+  .cover .scene img{ height:3.4in; width:auto; max-width:6.8in; object-fit:contain; display:block; margin:0 auto; }
+  .cover .name-field{ margin-top:18px; display:inline-block; padding:12px 22px; border:2px dashed var(--green-deep); border-radius:14px; background:#fff; font-family:"Caveat",cursive; font-size:18pt; color:var(--ink); }
+  .cover .name-field .line{ display:inline-block; width:2.6in; border-bottom:2px solid var(--ink); margin-left:8px; height:1.3em; vertical-align:bottom; }
+  .cover .stats{ margin-top:16px; font-family:"Fredoka",sans-serif; font-weight:500; font-size:11pt; color:var(--ink2); letter-spacing:.06em; }
+  .cover .stats span{ color:var(--green-deep); margin:0 6px; }
+
+  /* PAGE 2 — Hola / Hello */
+  .hello h1{ font-size:48pt; color:var(--green-deep); margin-bottom:10px; }
+  .hello h2{ font-family:"Caveat",cursive; font-size:32pt; color:var(--navy); }
+  .hello .cols{ display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:30px; }
+  .hello .col{ background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:24px 26px; }
+  .hello .col .label{ display:inline-block; margin-bottom:10px; }
+  .hello .col p{ font-size:13pt; line-height:1.55; margin:0 0 10px; color:var(--ink); }
+  .hello .anim{ position:absolute; bottom:0.55in; right:0.55in; width:2in; }
+  .hello .anim img{ width:100%; }
+
+  /* PAGE 3 — Welcome (parents) */
+  .welcome .head{ text-align:center; margin-bottom:22px; }
+  .welcome .head h1{ font-size:34pt; color:var(--green-deep); }
+  .welcome .head p{ font-family:"Caveat",cursive; font-size:18pt; color:var(--navy); margin:6px 0 0; }
+  .welcome .grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .welcome .grid h3{ font-size:18pt; color:var(--navy); margin-bottom:8px; }
+  .welcome .grid p{ font-size:11.5pt; line-height:1.55; }
+  .welcome .tips{ margin-top:22px; background:var(--green-soft); border-radius:14px; padding:18px 22px; }
+  .welcome .tips h4{ font-size:14pt; color:var(--green-deep); margin-bottom:8px; }
+  .welcome .tips ul{ margin:0; padding-left:18px; font-size:11pt; line-height:1.55; }
+  .welcome .tips li{ margin-bottom:5px; }
+
+  /* PAGE 4 — Your Jungle Map */
+  .map h1{ text-align:center; font-size:42pt; color:var(--green-deep); margin-bottom:8px; }
+  .map .sub{ text-align:center; font-family:"Caveat",cursive; font-size:20pt; color:var(--navy); margin-bottom:18px; }
+  .map .grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .map .mcard{ background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:14px 16px; display:flex; align-items:center; gap:14px; }
+  .map .mnum{ flex:0 0 auto; width:42px; height:42px; border-radius:50%; display:grid; place-items:center; font-family:"Fredoka",sans-serif; font-weight:700; font-size:18pt; color:#fff; }
+  .map .mt{ flex:1; }
+  .map .mt .en{ font-family:"Fredoka",sans-serif; font-weight:600; font-size:14pt; color:var(--ink); }
+  .map .mt .es{ font-family:"Caveat",cursive; font-size:14pt; color:var(--navy); margin-top:1px; }
+  .map .mcard:nth-child(1) .mnum{ background:var(--green); } .map .mcard:nth-child(2) .mnum{ background:var(--navy); }
+  .map .mcard:nth-child(3) .mnum{ background:var(--red); } .map .mcard:nth-child(4) .mnum{ background:var(--gold); }
+  .map .mcard:nth-child(5) .mnum{ background:var(--purple); } .map .mcard:nth-child(6) .mnum{ background:var(--green-deep); }
+  .map .mcard:nth-child(7) .mnum{ background:var(--coral); } .map .mcard:nth-child(8) .mnum{ background:var(--navy-deep); }
+  .map .legend{ margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .map .legend .lg{ text-align:center; background:#fff; border:2px dashed; border-radius:12px; padding:12px; font-size:11pt; }
+  .map .lg.t{ border-color:var(--green-deep); color:var(--green-deep); }
+  .map .lg.r{ border-color:var(--red); color:var(--red); }
+  .map .lg.c{ border-color:var(--purple); color:var(--purple); }
+
+  /* PAGE 5 — Meet the animals */
+  .meet h1{ text-align:center; font-size:34pt; color:var(--green-deep); margin-bottom:4px; }
+  .meet .sub{ text-align:center; font-family:"Caveat",cursive; font-size:18pt; color:var(--navy); margin-bottom:16px; }
+  .meet .grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+  .meet .grid.last { grid-template-columns:repeat(5,1fr); margin-top:14px; }
+  .meet .a{ background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:8px 8px 12px; text-align:center; }
+  .meet .a img{ width:100%; height:1.15in; object-fit:contain; margin-bottom:4px; }
+  .meet .a .en{ font-family:"Fredoka",sans-serif; font-weight:700; font-size:13pt; color:var(--green-deep); }
+  .meet .a .es{ font-family:"Caveat",cursive; font-size:14pt; color:var(--navy); margin-top:1px; }
+
+  /* MISSIONS — header pattern */
+  .mhead{ display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .mhead .mn{ width:54px; height:54px; border-radius:50%; display:grid; place-items:center; color:#fff; font-family:"Fredoka",sans-serif; font-weight:700; font-size:22pt; flex:0 0 auto; }
+  .mhead h1{ font-size:30pt; color:var(--ink); line-height:1.05; }
+  .mhead h1 .es{ display:block; font-family:"Caveat",cursive; font-size:18pt; color:var(--navy); font-weight:600; margin-top:-2px; }
+  .minst{ display:flex; gap:14px; margin-bottom:18px; }
+  .minst .pill{ font-size:10.5pt; }
+  .minst .ins{ flex:1; font-family:"Fredoka",sans-serif; font-weight:500; font-size:12pt; color:var(--ink); padding:9px 14px; background:#fff; border:2px dashed var(--green-deep); border-radius:12px; }
+
+  /* M1 Match */
+  .match .cols{ display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:6px; }
+  .match .col{ display:flex; flex-direction:column; gap:11px; }
+  .match .col h3{ text-align:center; font-size:15pt; margin-bottom:4px; }
+  .match .col.es h3{ color:var(--red); } .match .col.en h3{ color:var(--green-deep); }
+  .match .item{ background:#fff; border:2px solid var(--line); border-radius:999px; padding:11px 22px; font-family:"Fredoka",sans-serif; font-size:16pt; font-weight:500; text-align:center; color:var(--ink); }
+  .match .col.es .item{ border-color:var(--red); color:var(--red); font-family:"Caveat",cursive; font-size:22pt; font-weight:700; }
+  .match .col.en .item{ border-color:var(--green-deep); color:var(--green-deep); }
+
+  /* M2 Trace */
+  .trace .grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .trace .item{ background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:14px; }
+  .trace .item .row{ display:flex; gap:14px; align-items:center; }
+  .trace .item img{ width:1in; height:1in; object-fit:contain; flex:0 0 auto; }
+  .trace .item .lines{ flex:1; }
+  .trace .item .tline{ display:block; font-family:"Caveat",cursive; font-weight:700; font-size:32pt; color:#C8C2AE; letter-spacing:.03em; line-height:1; margin:0 0 10px; -webkit-text-stroke:1.5px #C8C2AE;}
+  .trace .item .lab{ font-size:9pt; color:var(--ink2); margin-top:4px; }
+  .trace .item .lab.es{ color:var(--red); } .trace .item .lab.en{ color:var(--green-deep); }
+
+  /* M3 Fill letters */
+  .fill .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .fill .item{ background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:12px; text-align:center; }
+  .fill .item img{ width:100%; height:1.05in; object-fit:contain; margin-bottom:6px; }
+  .fill .item .word{ font-family:"Fredoka",sans-serif; font-weight:700; font-size:18pt; letter-spacing:.12em; margin:5px 0 2px; }
+  .fill .item .word.es{ color:var(--red); font-family:"Caveat",cursive; font-size:22pt; letter-spacing:.04em; }
+  .fill .item .word.en{ color:var(--green-deep); }
+  .fill .item .gap{ display:inline-block; width:.6em; border-bottom:2px solid var(--ink); }
+
+  /* M4 Color & label */
+  .color4 .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .color4 .item{ background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:14px; text-align:center; }
+  .color4 .item .frame{ width:100%; height:2.2in; background:#FBF6E8; border:2px dashed var(--green); border-radius:10px; display:grid; place-items:center; overflow:hidden; }
+  .color4 .item .frame img{ width:80%; height:80%; object-fit:contain; opacity:.85; }
+  .color4 .item .nm{ margin-top:10px; }
+  .color4 .item .nm .lab{ font-size:9pt; color:var(--ink2); margin-top:3px; }
+  .color4 .item .nm .l{ display:block; border-bottom:2px solid var(--ink); height:1.4em; margin-top:6px; }
+
+  /* M5 Count */
+  .count .row{ display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:center; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:14px; margin-bottom:11px; }
+  .count .row .pic{ display:flex; gap:6px; align-items:end; }
+  .count .row .pic img{ height:60px; width:auto; }
+  .count .row .ans{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .count .row .ans .box{ display:inline-block; width:50px; height:38px; border:2px solid var(--ink); border-radius:8px; }
+  .count .row .ans .word{ display:inline-block; min-width:1.4in; border-bottom:2px solid var(--ink); height:1.4em; }
+  .count .row .ans .sep{ color:var(--ink2); }
+
+  /* M6 Day in the jungle */
+  .day .bank{ background:var(--gold-soft); border:2px dashed var(--gold); border-radius:14px; padding:12px 18px; margin-bottom:14px; text-align:center; font-family:"Fredoka",sans-serif; font-weight:500; font-size:13pt; color:var(--ink); }
+  .day .bank b{ color:var(--green-deep); margin:0 6px; }
+  .day .sent{ background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:11px 16px; margin-bottom:9px; display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:center; font-size:13pt; }
+  .day .sent .es{ font-family:"Caveat",cursive; font-size:18pt; color:var(--navy); }
+  .day .sent .en{ font-family:"Fredoka",sans-serif; font-weight:500; color:var(--ink); }
+  .day .blank{ display:inline-block; min-width:1.3in; border-bottom:2px solid var(--ink); padding:0 4px; height:1.3em; vertical-align:bottom; }
+
+  /* M7 Translate */
+  .trans .grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .trans .col h3{ text-align:center; font-size:15pt; margin-bottom:10px; padding:6px 0; border-radius:8px; }
+  .trans .col.es h3{ background:var(--red-soft); color:var(--red); }
+  .trans .col.en h3{ background:var(--green-soft); color:var(--green-deep); }
+  .trans .item{ background:#fff; border:1.5px solid var(--line); border-radius:10px; padding:10px 14px; margin-bottom:8px; }
+  .trans .item .src{ font-size:12pt; }
+  .trans .col.es .item .src{ font-family:"Caveat",cursive; font-size:16pt; color:var(--navy); }
+  .trans .col.en .item .src{ font-family:"Fredoka",sans-serif; font-weight:500; color:var(--ink); }
+  .trans .item .l{ display:block; border-bottom:2px solid var(--ink); height:1.4em; margin-top:8px; }
+
+  /* M8 Word search */
+  .ws .grid-wrap{ display:grid; grid-template-columns:1.4fr 1fr; gap:20px; }
+  .ws .grid{ display:grid; grid-template-columns:repeat(12, 1fr); gap:2px; background:#fff; border:2px solid var(--green-deep); border-radius:10px; padding:6px; }
+  .ws .grid .c{ aspect-ratio:1; display:grid; place-items:center; font-family:"Fredoka",sans-serif; font-weight:600; font-size:13pt; color:var(--ink); background:#FAF7EE; border-radius:4px; }
+  .ws .list h3{ font-size:14pt; margin-bottom:8px; }
+  .ws .list .grp{ background:#fff; border:1.5px solid var(--line); border-radius:10px; padding:10px 12px; margin-bottom:8px; }
+  .ws .list .lab{ display:inline-block; margin-bottom:4px; }
+  .ws .list ul{ margin:0; padding-left:18px; font-size:11.5pt; }
+  .ws .list ul li{ margin-bottom:2px; }
+
+  /* Bonus draw */
+  .draw .frame{ background:#fff; border:2px dashed var(--green-deep); border-radius:14px; height:4.6in; display:grid; place-items:center; color:var(--ink2); font-family:"Caveat",cursive; font-size:18pt; }
+  .draw .qa{ margin-top:14px; }
+  .draw .q{ background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:11px 14px; margin-bottom:8px; display:flex; align-items:baseline; gap:10px; font-size:12pt; }
+  .draw .q .l{ flex:1; border-bottom:2px solid var(--ink); height:1.3em; }
+
+  /* Color scene */
+  .color-scene{ }
+  .color-scene .scene{ background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:10px; margin-bottom:12px; }
+  .color-scene .scene img{ width:100%; height:6in; object-fit:contain; }
+  .color-scene .find{ background:var(--green-soft); border-radius:12px; padding:12px 16px; font-size:12pt; }
+  .color-scene .find b{ color:var(--green-deep); margin-right:4px; }
+
+  /* Vocabulary */
+  .vocab .cols{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .vocab .cat{ background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:14px; margin-bottom:12px; }
+  .vocab .cat h3{ font-size:14pt; color:var(--green-deep); margin-bottom:8px; }
+  .vocab table{ width:100%; border-collapse:collapse; font-size:11pt; }
+  .vocab td{ padding:3px 4px; }
+  .vocab td.es{ font-family:"Caveat",cursive; font-size:14pt; color:var(--navy); }
+  .vocab td.en{ font-family:"Fredoka",sans-serif; font-weight:500; color:var(--ink); }
+
+  /* Answer key */
+  .ans h1{ font-size:32pt; color:var(--green-deep); margin-bottom:14px; }
+  .ans .sec{ background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:12px 16px; margin-bottom:11px; }
+  .ans .sec h3{ font-size:14pt; color:var(--navy); margin-bottom:6px; }
+  .ans .sec ul{ margin:0; padding-left:18px; font-size:11pt; line-height:1.5; }
+  .ans .sec li b{ color:var(--green-deep); }
+
+  /* Diploma */
+  .diploma{ background:var(--paper); position:relative; }
+  .diploma .inner{ border:6px double var(--green-deep); border-radius:18px; padding:0.55in; height:100%; text-align:center; display:flex; flex-direction:column; justify-content:center; gap:14px; }
+  .diploma .ribbon{ font-family:"Caveat",cursive; font-size:24pt; color:var(--red); }
+  .diploma h1{ font-size:56pt; color:var(--green-deep); line-height:1; }
+  .diploma h2{ font-family:"Caveat",cursive; font-size:40pt; color:var(--navy); margin-top:-6px; }
+  .diploma .p{ font-size:13pt; color:var(--ink); max-width:5.2in; margin:6px auto 0; }
+  .diploma .name{ margin:24px auto 8px; max-width:4.6in; }
+  .diploma .name .l{ display:block; border-bottom:2px solid var(--ink); height:1.6em; }
+  .diploma .meta{ display:flex; justify-content:space-around; margin-top:18px; font-family:"Fredoka",sans-serif; font-size:12pt; color:var(--ink2); }
+  .diploma .stamp{ position:absolute; right:0.8in; bottom:0.95in; width:1.4in; height:1.4in; border:3px dashed var(--green-deep); border-radius:50%; display:grid; place-items:center; text-align:center; transform:rotate(-12deg); }
+  .diploma .stamp b{ display:block; font-family:"Fredoka",sans-serif; font-weight:700; color:var(--green-deep); font-size:12pt; }
+  .diploma .stamp span{ display:block; font-family:"Caveat",cursive; font-size:14pt; color:var(--navy); }
+
+  /* About / Back */
+  .about-page{ text-align:center; padding-top:0.7in; }
+  .about-page .logo{ margin-bottom:10px; }
+  .about-page h1{ font-size:34pt; color:var(--green-deep); margin-bottom:6px; }
+  .about-page .sub{ font-family:"Caveat",cursive; font-size:22pt; color:var(--navy); margin-bottom:18px; }
+  .about-page .row{ display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:center; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:18px; max-width:6.5in; margin:0 auto; }
+  .about-page .row img{ height:2.4in; width:auto; border-radius:6px; box-shadow:0 8px 20px rgba(0,0,0,.15); }
+  .about-page .row .txt{ text-align:left; }
+  .about-page .row .txt h3{ font-size:18pt; color:var(--navy); margin-bottom:6px; }
+  .about-page .row .txt p{ font-size:11.5pt; line-height:1.55; }
+  .about-page .cta{ display:inline-block; margin-top:18px; padding:12px 24px; background:var(--green-deep); color:#fff; font-family:"Fredoka",sans-serif; font-weight:600; font-size:13pt; border-radius:999px; }
+  .about-page .url{ margin-top:16px; font-family:"Caveat",cursive; font-size:18pt; color:var(--ink2); }
+
+  /* Back cover */
+  .backc{ text-align:center; padding-top:1in; background:var(--green-deep); color:#fff; }
+  .backc .logo svg .bg{ fill:#fff; } .backc .logo svg .ship{ fill:var(--green-deep); } .backc .er-text{ fill:var(--green-deep); }
+  .backc h1{ font-size:48pt; color:#fff; margin-top:18px; line-height:1.05; }
+  .backc h1 .accent{ color:#FFE9A3; }
+  .backc .quote{ font-family:"Caveat",cursive; font-size:22pt; color:#E9F5DD; max-width:5.5in; margin:20px auto 0; line-height:1.4; }
+  .backc .imps{ margin-top:34px; display:flex; justify-content:center; gap:30px; font-family:"Fredoka",sans-serif; font-weight:600; color:#fff; }
+  .backc .imps span{ opacity:.85; }
+  .backc .imps .you{ background:#fff; color:var(--green-deep); padding:4px 14px; border-radius:999px; }
+  .backc .url{ position:absolute; left:0; right:0; bottom:0.55in; color:#E9F5DD; font-family:"Fredoka",sans-serif; font-weight:500; }
+</style>
+</head>
+<body>
+
+<!-- ================== PAGE 1 — COVER ================== -->
+<section class="page cover deco-dots">
+  <div class="logo">
+    <svg class="er-logo" viewBox="0 0 88 106">
+      <rect class="bg" x="4" y="2" width="80" height="102" rx="18"/>
+      <g transform="translate(8,8)">
+        <circle cx="36" cy="20" r="14" fill="#fff" opacity=".18"/>
+        <path class="ship" d="M14 28h44l-6 8H20l-6-8zm22-18l8 14H28l8-14zm0 2v12" />
+        <path class="ship" d="M22 36c8 4 20 4 28 0v3H22z" opacity=".9"/>
+      </g>
+      <text class="er-text" x="44" y="76" text-anchor="middle">EPIC</text>
+      <text class="er-text" x="44" y="92" text-anchor="middle">READERS</text>
+    </svg>
+  </div>
+  <div class="presents">presents</div>
+  <h1 class="title-en">JUNGLE FRIENDS</h1>
+  <h2 class="title-es">Amigos de la Selva</h2>
+  <div class="grade"><span class="badge">a 1<sup>st</sup> Grade Bilingual Workbook</span></div>
+  <div class="scene"><img src="illustrations/cover-scene.png" alt="jungle scene"></div>
+  <div class="name-field">This jungle belongs to <span class="line"></span></div>
+  <div class="stats">✦<span>8 missions</span>✦<span>10 animals</span>✦<span>bilingual</span>✦<span>ages 5–7</span>✦</div>
+</section>
+
+<!-- ================== PAGE 2 — HOLA / HELLO ================== -->
+<section class="page hello deco-dots">
+  <h1>¡Hola, explorador!</h1>
+  <h2>Hello, explorer!</h2>
+  <div class="cols">
+    <div class="col">
+      <span class="pill es">Español</span>
+      <p>Bienvenido a la selva. Aquí vas a conocer a diez animales, descubrir cómo se llaman en español y en inglés, y completar ocho misiones llenas de palabras nuevas.</p>
+      <p>No tienes que saberlo todo. Lee con calma, mira los dibujos y diviértete. Las dos lenguas siempre están juntas para ayudarte.</p>
+      <p><b>¿Listo para empezar la aventura?</b></p>
+    </div>
+    <div class="col">
+      <span class="pill en">English</span>
+      <p>Welcome to the jungle. You're going to meet ten animals, learn what they're called in Spanish and English, and finish eight missions full of new words.</p>
+      <p>You don't have to know everything. Take your time, look at the pictures, and have fun. The two languages are always next to each other to help you.</p>
+      <p><b>Ready to start the adventure?</b></p>
+    </div>
+  </div>
+  <div class="pf"><span class="imp">Bilingual Short Stories · Jungle Friends</span><span class="pn">2</span></div>
+</section>
+
+<!-- ================== PAGE 3 — WELCOME (parents) ================== -->
+<section class="page welcome">
+  <div class="head">
+    <h1>For grown-ups</h1>
+    <p>Para los grandes</p>
+  </div>
+  <div class="grid">
+    <div>
+      <h3><span class="pill es">Para padres</span></h3>
+      <p>Este workbook está diseñado para que los niños de 6 a 7 años exploren palabras y frases en español e inglés sin presión. Cada misión muestra los dos idiomas en paralelo: el niño puede leer en el idioma que mejor entiende y descubrir el otro de forma natural.</p>
+      <p>No hay respuesta «mala». Lo importante es probar, observar las palabras y disfrutar las ilustraciones. Si tu hijo se traba, lee tú la frase en voz alta — el oído ayuda muchísimo a esa edad.</p>
+    </div>
+    <div>
+      <h3><span class="pill en">For parents</span></h3>
+      <p>This workbook is built for kids ages 6–7 to explore words and sentences in Spanish and English without pressure. Every mission shows both languages side by side: your child can read in their stronger language and pick up the other naturally.</p>
+      <p>There are no «wrong» answers. What matters is trying, noticing the words, and enjoying the illustrations. If your child gets stuck, read the sentence out loud — at this age, hearing the words helps enormously.</p>
+    </div>
+  </div>
+  <div class="tips">
+    <h4>Quick tips · Tips rápidos</h4>
+    <ul>
+      <li><b>Read together / Lean juntos.</b> Take turns reading the Spanish and the English. / Túrnense leyendo el español y el inglés.</li>
+      <li><b>Celebrate effort, not perfection / Celebren el esfuerzo, no la perfección.</b> Encourage trying. / Animen a intentarlo.</li>
+      <li><b>Slow is fine / Lento está bien.</b> One mission per day is plenty. / Una misión al día está perfecto.</li>
+      <li><b>Answer key in the back / Respuestas al final.</b> Use it after, not before. / Úsenla después, no antes.</li>
+    </ul>
+  </div>
+  <div class="pf"><span class="imp">Bilingual Short Stories · Jungle Friends</span><span class="pn">3</span></div>
+</section>
+
+<!-- ================== PAGE 4 — YOUR JUNGLE MAP ================== -->
+<section class="page map deco-dots">
+  <h1>Your Jungle Map</h1>
+  <div class="sub">Tu mapa de la selva</div>
+  <div class="grid">
+    <div class="mcard"><div class="mnum">1</div><div class="mt"><div class="en">Match the Words</div><div class="es">Une las palabras</div></div></div>
+    <div class="mcard"><div class="mnum">2</div><div class="mt"><div class="en">Trace the Words</div><div class="es">Traza las palabras</div></div></div>
+    <div class="mcard"><div class="mnum">3</div><div class="mt"><div class="en">Fill the Letters</div><div class="es">Completa las letras</div></div></div>
+    <div class="mcard"><div class="mnum">4</div><div class="mt"><div class="en">Color &amp; Label</div><div class="es">Colorea y nombra</div></div></div>
+    <div class="mcard"><div class="mnum">5</div><div class="mt"><div class="en">Count Bilingual</div><div class="es">Cuenta en dos idiomas</div></div></div>
+    <div class="mcard"><div class="mnum">6</div><div class="mt"><div class="en">A Day in the Jungle</div><div class="es">Un día en la selva</div></div></div>
+    <div class="mcard"><div class="mnum">7</div><div class="mt"><div class="en">Translate It!</div><div class="es">¡Tradúcelo!</div></div></div>
+    <div class="mcard"><div class="mnum">8</div><div class="mt"><div class="en">Word Search</div><div class="es">Sopa de letras</div></div></div>
+  </div>
+  <div class="legend">
+    <div class="lg t">✎ Trace</div>
+    <div class="lg r">👁 Read aloud</div>
+    <div class="lg c">🎨 Color</div>
+  </div>
+  <div class="pf"><span class="imp">Bilingual Short Stories · Jungle Friends</span><span class="pn">4</span></div>
+</section>
+
+<!-- ================== PAGE 5 — MEET THE ANIMALS ================== -->
+<section class="page meet">
+  <h1>Meet the Animals</h1>
+  <div class="sub">Conoce a los animales</div>
+  <div class="grid">
+    <div class="a"><img src="illustrations/monkey.png" alt=""><div class="en">monkey</div><div class="es">mono</div></div>
+    <div class="a"><img src="illustrations/toucan.png" alt=""><div class="en">toucan</div><div class="es">tucán</div></div>
+    <div class="a"><img src="illustrations/tiger.png" alt=""><div class="en">tiger</div><div class="es">tigre</div></div>
+    <div class="a"><img src="illustrations/frog.png" alt=""><div class="en">frog</div><div class="es">rana</div></div>
+    <div class="a"><img src="illustrations/elephant.png" alt=""><div class="en">elephant</div><div class="es">elefante</div></div>
+  </div>
+  <div class="grid last">
+    <div class="a"><img src="illustrations/sloth.png" alt=""><div class="en">sloth</div><div class="es">perezoso</div></div>
+    <div class="a"><img src="illustrations/parrot.png" alt=""><div class="en">parrot</div><div class="es">loro</div></div>
+    <div class="a"><img src="illustrations/snake.png" alt=""><div class="en">snake</div><div class="es">serpiente</div></div>
+    <div class="a"><img src="illustrations/butterfly.png" alt=""><div class="en">butterfly</div><div class="es">mariposa</div></div>
+    <div class="a"><img src="illustrations/jaguar.png" alt=""><div class="en">jaguar</div><div class="es">jaguar</div></div>
+  </div>
+  <div class="pf"><span class="imp">Bilingual Short Stories · Jungle Friends</span><span class="pn">5</span></div>
+</section>
+
+<!-- ================== PAGE 6 — MISSION 1: MATCH ================== -->
+<section class="page match">
+  <div class="mhead"><div class="mn" style="background:var(--green);">1</div><h1>Match the Words<span class="es">Une las palabras</span></h1></div>
+  <div class="minst"><span class="pill es">Español</span><span class="pill en">English</span><div class="ins">Draw a line from the Spanish word to its English friend. ✎ — Une cada palabra con su pareja en inglés.</div></div>
+  <div class="cols">
+    <div class="col es"><h3>Español</h3>
+      <div class="item">mono</div><div class="item">tucán</div><div class="item">tigre</div><div class="item">rana</div>
+      <div class="item">elefante</div><div class="item">perezoso</div><div class="item">loro</div><div class="item">mariposa</div>
+    </div>
+    <div class="col en"><h3>English</h3>
+      <div class="item">elephant</div><div class="item">frog</div><div class="item">butterfly</div><div class="item">tiger</div>
+      <div class="item">monkey</div><div class="item">parrot</div><div class="item">sloth</div><div class="item">toucan</div>
+    </div>
+  </div>
+  <div class="pf"><span class="imp">Mission 1 · Misión 1</span><span class="pn">6</span></div>
+</section>
+
+<!-- ================== PAGE 7 — MISSION 2: TRACE ================== -->
+<section class="page trace">
+  <div class="mhead"><div class="mn" style="background:var(--navy);">2</div><h1>Trace the Words<span class="es">Traza las palabras</span></h1></div>
+  <div class="minst"><span class="pill es">Español</span><span class="pill en">English</span><div class="ins">Trace over each word slowly. Try to stay on the dotted line. ✎ — Traza cada palabra despacio y sigue las líneas.</div></div>
+  <div class="grid">
+    <div class="item"><div class="row"><img src="illustrations/monkey.png" alt=""><div class="lines"><span class="tline">mono</span><span class="tline">monkey</span><div class="lab"><span class="lab es">Español</span> · <span class="lab en">English</span></div></div></div></div>
+    <div class="item"><div class="row"><img src="illustrations/tiger.png" alt=""><div class="lines"><span class="tline">tigre</span><span class="tline">tiger</span></div></div></div>
+    <div class="item"><div class="row"><img src="illustrations/frog.png" alt=""><div class="lines"><span class="tline">rana</span><span class="tline">frog</span></div></div></div>
+    <div class="item"><div class="row"><img src="illustrations/butterfly.png" alt=""><div class="lines"><span class="tline">mariposa</span><span class="tline">butterfly</span></div></div></div>
+  </div>
+  <div class="pf"><span class="imp">Mission 2 · Misión 2</span><span class="pn">7</span></div>
+</section>
+
+<!-- ================== PAGE 8 — MISSION 3: FILL LETTERS ================== -->
+<section class="page fill">
+  <div class="mhead"><div class="mn" style="background:var(--red);">3</div><h1>Fill the Letters<span class="es">Completa las letras</span></h1></div>
+  <div class="minst"><span class="pill en">English</span><span class="pill es">Español</span><div class="ins">Some letters ran away! Write the missing ones to spell each animal. ✎ — Faltan letras. Escríbelas para completar cada nombre.</div></div>
+  <div class="grid">
+    <div class="item"><img src="illustrations/elephant.png" alt=""><div class="word en">E L _ P H _ N T</div><div class="word es">elef _ nte</div></div>
+    <div class="item"><img src="illustrations/toucan.png" alt=""><div class="word en">T _ U C _ N</div><div class="word es">tu _ án</div></div>
+    <div class="item"><img src="illustrations/sloth.png" alt=""><div class="word en">S L _ T H</div><div class="word es">pere _ oso</div></div>
+    <div class="item"><img src="illustrations/parrot.png" alt=""><div class="word en">P _ R R _ T</div><div class="word es">l _ ro</div></div>
+    <div class="item"><img src="illustrations/snake.png" alt=""><div class="word en">S N _ K E</div><div class="word es">serpi _ nte</div></div>
+    <div class="item"><img src="illustrations/jaguar.png" alt=""><div class="word en">J _ G U _ R</div><div class="word es">ja _ uar</div></div>
+  </div>
+  <div class="pf"><span class="imp">Mission 3 · Misión 3</span><span class="pn">8</span></div>
+</section>
+
+<!-- ================== PAGE 9 — MISSION 4: COLOR & LABEL ================== -->
+<section class="page color4">
+  <div class="mhead"><div class="mn" style="background:var(--gold);">4</div><h1>Color &amp; Label<span class="es">Colorea y nombra</span></h1></div>
+  <div class="minst"><span class="pill en">English</span><span class="pill es">Español</span><div class="ins">Color each animal however you like. Then write its name in both languages. 🎨 — Colorea y luego escribe el nombre en los dos idiomas.</div></div>
+  <div class="grid">
+    <div class="item"><div class="frame"><img src="illustrations/frog.png" alt=""></div><div class="nm"><span class="l"></span><div class="lab">English</div><span class="l" style="margin-top:10px"></span><div class="lab">Español</div></div></div>
+    <div class="item"><div class="frame"><img src="illustrations/butterfly.png" alt=""></div><div class="nm"><span class="l"></span><div class="lab">English</div><span class="l" style="margin-top:10px"></span><div class="lab">Español</div></div></div>
+    <div class="item"><div class="frame"><img src="illustrations/parrot.png" alt=""></div><div class="nm"><span class="l"></span><div class="lab">English</div><span class="l" style="margin-top:10px"></span><div class="lab">Español</div></div></div>
+  </div>
+  <div class="pf"><span class="imp">Mission 4 · Misión 4</span><span class="pn">9</span></div>
+</section>
+
+<!-- ================== PAGE 10 — MISSION 5: COUNT BILINGUAL ================== -->
+<section class="page count">
+  <div class="mhead"><div class="mn" style="background:var(--purple);">5</div><h1>Count Bilingual<span class="es">Cuenta en dos idiomas</span></h1></div>
+  <div class="minst"><span class="pill en">English</span><span class="pill es">Español</span><div class="ins">Count the animals in each row. Write the number and the name in both languages. ✎ — Cuenta, escribe el número y el nombre en los dos idiomas.</div></div>
+
+  <div class="row"><div class="pic"><img src="illustrations/monkey.png"><img src="illustrations/monkey.png"><img src="illustrations/monkey.png"></div>
+    <div class="ans"><span class="box"></span><span class="word"></span> <span class="sep">·</span> <span class="word"></span></div></div>
+  <div class="row"><div class="pic"><img src="illustrations/frog.png"><img src="illustrations/frog.png"></div>
+    <div class="ans"><span class="box"></span><span class="word"></span> <span class="sep">·</span> <span class="word"></span></div></div>
+  <div class="row"><div class="pic"><img src="illustrations/butterfly.png"><img src="illustrations/butterfly.png"><img src="illustrations/butterfly.png"><img src="illustrations/butterfly.png"></div>
+    <div class="ans"><span class="box"></span><span class="word"></span> <span class="sep">·</span> <span class="word"></span></div></div>
+  <div class="row"><div class="pic"><img src="illustrations/parrot.png"></div>
+    <div class="ans"><span class="box"></span><span class="word"></span> <span class="sep">·</span> <span class="word"></span></div></div>
+  <div class="row"><div class="pic"><img src="illustrations/elephant.png"><img src="illustrations/elephant.png"></div>
+    <div class="ans"><span class="box"></span><span class="word"></span> <span class="sep">·</span> <span class="word"></span></div></div>
+  <div class="pf"><span class="imp">Mission 5 · Misión 5</span><span class="pn">10</span></div>
+</section>
+
+<!-- ================== PAGE 11 — MISSION 6: A DAY IN THE JUNGLE ================== -->
+<section class="page day">
+  <div class="mhead"><div class="mn" style="background:var(--green-deep);">6</div><h1>A Day in the Jungle<span class="es">Un día en la selva</span></h1></div>
+  <div class="minst"><span class="pill en">English</span><span class="pill es">Español</span><div class="ins">Fill in the missing animal in each sentence. ✎ — Escribe el animal que falta en cada frase.</div></div>
+  <div class="bank">Word bank · Palabras: <b>monkey · mono</b> <b>tiger · tigre</b> <b>parrot · loro</b> <b>frog · rana</b> <b>elephant · elefante</b> <b>sloth · perezoso</b></div>
+  <div class="sent"><div class="es">El <span class="blank"></span> trepa el árbol.</div><div class="en">The <span class="blank"></span> climbs the tree.</div></div>
+  <div class="sent"><div class="es">La <span class="blank"></span> salta en el agua.</div><div class="en">The <span class="blank"></span> jumps in the water.</div></div>
+  <div class="sent"><div class="es">El <span class="blank"></span> camina muy despacio.</div><div class="en">The <span class="blank"></span> walks very slowly.</div></div>
+  <div class="sent"><div class="es">El <span class="blank"></span> es enorme y gris.</div><div class="en">The <span class="blank"></span> is huge and gray.</div></div>
+  <div class="sent"><div class="es">El <span class="blank"></span> ruge entre las hojas.</div><div class="en">The <span class="blank"></span> roars in the leaves.</div></div>
+  <div class="sent"><div class="es">El <span class="blank"></span> habla con colores.</div><div class="en">The <span class="blank"></span> talks with colors.</div></div>
+  <div class="pf"><span class="imp">Mission 6 · Misión 6</span><span class="pn">11</span></div>
+</section>
+
+<!-- ================== PAGE 12 — MISSION 7: TRANSLATE IT! ================== -->
+<section class="page trans">
+  <div class="mhead"><div class="mn" style="background:var(--coral);">7</div><h1>Translate It!<span class="es">¡Tradúcelo!</span></h1></div>
+  <div class="minst"><span class="pill es">Español → English</span><span class="pill en">English → Español</span><div class="ins">Write each sentence in the other language. Use the vocabulary you've learned. ✎ — Escribe cada frase en el otro idioma.</div></div>
+  <div class="grid">
+    <div class="col es">
+      <h3>Spanish → English</h3>
+      <div class="item"><div class="src">El mono es gracioso.</div><span class="l"></span></div>
+      <div class="item"><div class="src">La rana es verde.</div><span class="l"></span></div>
+      <div class="item"><div class="src">Yo veo un tigre.</div><span class="l"></span></div>
+      <div class="item"><div class="src">El loro vuela rápido.</div><span class="l"></span></div>
+    </div>
+    <div class="col en">
+      <h3>English → Spanish</h3>
+      <div class="item"><div class="src">The elephant is big.</div><span class="l"></span></div>
+      <div class="item"><div class="src">The butterfly flies high.</div><span class="l"></span></div>
+      <div class="item"><div class="src">The sloth sleeps a lot.</div><span class="l"></span></div>
+      <div class="item"><div class="src">I love the jungle.</div><span class="l"></span></div>
+    </div>
+  </div>
+  <div class="pf"><span class="imp">Mission 7 · Misión 7</span><span class="pn">12</span></div>
+</section>
+
+<!-- ================== PAGE 13 — MISSION 8: WORD SEARCH ================== -->
+<section class="page ws">
+  <div class="mhead"><div class="mn" style="background:var(--navy-deep);">8</div><h1>Word Search<span class="es">Sopa de letras</span></h1></div>
+  <div class="minst"><span class="pill en">English</span><span class="pill es">Español</span><div class="ins">Find the animal words below — in both languages — hidden in the grid. 👁 — Encuentra las palabras de animales escondidas en los dos idiomas.</div></div>
+  <div class="grid-wrap">
+    <div class="grid" id="ws-grid"></div>
+    <div class="list">
+      <h3>Find these</h3>
+      <div class="grp"><span class="pill en lab">English</span>
+        <ul><li>MONKEY</li><li>TIGER</li><li>FROG</li><li>PARROT</li><li>SLOTH</li><li>SNAKE</li></ul>
+      </div>
+      <div class="grp"><span class="pill es lab">Español</span>
+        <ul><li>MONO</li><li>TIGRE</li><li>RANA</li><li>LORO</li><li>TUCAN</li><li>JAGUAR</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span class="imp">Mission 8 · Misión 8</span><span class="pn">13</span></div>
+</section>
+
+<!-- ================== PAGE 14 — BONUS: DRAW YOUR ANIMAL ================== -->
+<section class="page draw">
+  <div class="mhead"><div class="mn" style="background:var(--gold);">★</div><h1>Bonus: Draw Your Own Animal<span class="es">Bonus: Dibuja tu propio animal</span></h1></div>
+  <div class="minst"><span class="pill navy">Bonus · Bonus</span><div class="ins">Invent a brand-new jungle animal. Draw it in the frame, then tell us about it in both languages. 🎨 — Inventa un animal nuevo y cuéntanos sobre él.</div></div>
+  <div class="frame">Draw your animal here · Dibuja tu animal aquí</div>
+  <div class="qa">
+    <div class="q">My animal is called <span class="l"></span> in English and <span class="l"></span> in Spanish.</div>
+    <div class="q">Vive en <span class="l"></span> y le gusta <span class="l"></span>.</div>
+    <div class="q">It is <span class="l"></span> color and it can <span class="l"></span>.</div>
+  </div>
+  <div class="pf"><span class="imp">Bonus · Bonus</span><span class="pn">14</span></div>
+</section>
+
+<!-- ================== PAGE 15 — BONUS: COLOR THE JUNGLE ================== -->
+<section class="page color-scene">
+  <div class="mhead"><div class="mn" style="background:var(--green);">★</div><h1>Bonus: Color the Jungle<span class="es">Bonus: Colorea la selva</span></h1></div>
+  <div class="minst"><span class="pill navy">Bonus · Bonus</span><div class="ins">Find all the animals you've learned. Color them however you like. 🎨 — Encuentra todos los animales y coloréalos.</div></div>
+  <div class="scene"><img src="illustrations/coloring-scene.png" alt="jungle coloring scene"></div>
+  <div class="find"><b>Find &amp; color · Encuentra y colorea:</b> monkey/mono · toucan/tucán · tiger/tigre · frog/rana · elephant/elefante · sloth/perezoso · parrot/loro · snake/serpiente · butterfly/mariposa · jaguar/jaguar</div>
+  <div class="pf"><span class="imp">Bonus · Bonus</span><span class="pn">15</span></div>
+</section>
+
+<!-- ================== PAGE 16 — VOCABULARY ================== -->
+<section class="page vocab">
+  <div class="mhead"><div class="mn" style="background:var(--green-deep);">A</div><h1>Vocabulary<span class="es">Vocabulario</span></h1></div>
+  <div class="cols">
+    <div>
+      <div class="cat"><h3>🦜 Animals · Animales</h3>
+        <table>
+          <tr><td class="es">mono</td><td class="en">monkey</td><td class="es">tucán</td><td class="en">toucan</td></tr>
+          <tr><td class="es">tigre</td><td class="en">tiger</td><td class="es">rana</td><td class="en">frog</td></tr>
+          <tr><td class="es">elefante</td><td class="en">elephant</td><td class="es">perezoso</td><td class="en">sloth</td></tr>
+          <tr><td class="es">loro</td><td class="en">parrot</td><td class="es">serpiente</td><td class="en">snake</td></tr>
+          <tr><td class="es">mariposa</td><td class="en">butterfly</td><td class="es">jaguar</td><td class="en">jaguar</td></tr>
+        </table>
+      </div>
+      <div class="cat"><h3>🌳 The jungle · La selva</h3>
+        <table>
+          <tr><td class="es">selva</td><td class="en">jungle</td><td class="es">árbol</td><td class="en">tree</td></tr>
+          <tr><td class="es">hoja</td><td class="en">leaf</td><td class="es">río</td><td class="en">river</td></tr>
+          <tr><td class="es">flor</td><td class="en">flower</td><td class="es">cielo</td><td class="en">sky</td></tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="cat"><h3>🏃 Actions · Acciones</h3>
+        <table>
+          <tr><td class="es">trepar</td><td class="en">to climb</td><td class="es">saltar</td><td class="en">to jump</td></tr>
+          <tr><td class="es">volar</td><td class="en">to fly</td><td class="es">correr</td><td class="en">to run</td></tr>
+          <tr><td class="es">dormir</td><td class="en">to sleep</td><td class="es">caminar</td><td class="en">to walk</td></tr>
+          <tr><td class="es">hablar</td><td class="en">to talk</td><td class="es">rugir</td><td class="en">to roar</td></tr>
+        </table>
+      </div>
+      <div class="cat"><h3>🎨 Colors · Colores</h3>
+        <table>
+          <tr><td class="es">verde</td><td class="en">green</td><td class="es">rojo</td><td class="en">red</td></tr>
+          <tr><td class="es">azul</td><td class="en">blue</td><td class="es">amarillo</td><td class="en">yellow</td></tr>
+          <tr><td class="es">gris</td><td class="en">gray</td><td class="es">naranja</td><td class="en">orange</td></tr>
+        </table>
+      </div>
+      <div class="cat"><h3>🔢 Numbers · Números</h3>
+        <table>
+          <tr><td class="es">uno</td><td class="en">one</td><td class="es">dos</td><td class="en">two</td></tr>
+          <tr><td class="es">tres</td><td class="en">three</td><td class="es">cuatro</td><td class="en">four</td></tr>
+          <tr><td class="es">cinco</td><td class="en">five</td><td class="es">seis</td><td class="en">six</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span class="imp">Vocabulary · Vocabulario</span><span class="pn">16</span></div>
+</section>
+
+<!-- ================== PAGE 17 — ANSWER KEY ================== -->
+<section class="page ans">
+  <h1>Answer Key · Respuestas</h1>
+  <div class="sec"><h3>Mission 1 · Match the Words</h3>
+    <ul>
+      <li>mono → <b>monkey</b> · tucán → <b>toucan</b> · tigre → <b>tiger</b> · rana → <b>frog</b></li>
+      <li>elefante → <b>elephant</b> · perezoso → <b>sloth</b> · loro → <b>parrot</b> · mariposa → <b>butterfly</b></li>
+    </ul>
+  </div>
+  <div class="sec"><h3>Mission 3 · Fill the Letters</h3>
+    <ul>
+      <li><b>ELEPHANT</b> · <b>elefante</b> &nbsp; <b>TOUCAN</b> · <b>tucán</b> &nbsp; <b>SLOTH</b> · <b>perezoso</b></li>
+      <li><b>PARROT</b> · <b>loro</b> &nbsp; <b>SNAKE</b> · <b>serpiente</b> &nbsp; <b>JAGUAR</b> · <b>jaguar</b></li>
+    </ul>
+  </div>
+  <div class="sec"><h3>Mission 5 · Count Bilingual</h3>
+    <ul>
+      <li>3 monkeys / 3 monos · 2 frogs / 2 ranas · 4 butterflies / 4 mariposas · 1 parrot / 1 loro · 2 elephants / 2 elefantes</li>
+    </ul>
+  </div>
+  <div class="sec"><h3>Mission 6 · A Day in the Jungle</h3>
+    <ul>
+      <li>monkey / mono · frog / rana · sloth / perezoso · elephant / elefante · tiger / tigre · parrot / loro</li>
+    </ul>
+  </div>
+  <div class="sec"><h3>Mission 7 · Translate It!</h3>
+    <ul>
+      <li>The monkey is funny. · The frog is green. · I see a tiger. · The parrot flies fast.</li>
+      <li>El elefante es grande. · La mariposa vuela alto. · El perezoso duerme mucho. · Me encanta la selva.</li>
+    </ul>
+  </div>
+  <div class="pf"><span class="imp">Answer Key · Respuestas</span><span class="pn">17</span></div>
+</section>
+
+<!-- ================== PAGE 18 — DIPLOMA ================== -->
+<section class="page diploma">
+  <div class="inner">
+    <div class="ribbon">~ Diploma ~</div>
+    <h1>You did it!</h1>
+    <h2>¡Lo lograste!</h2>
+    <p class="p">For exploring the jungle in two languages — meeting ten animals, finishing eight missions, and growing as a brave bilingual reader.</p>
+    <p class="p" style="margin-top:0; color:var(--navy);">Por explorar la selva en dos idiomas y crecer como un valiente lector bilingüe.</p>
+    <div class="name">
+      <span class="l"></span>
+      <div style="font-family:'Fredoka',sans-serif; font-size:11pt; color:var(--ink2); margin-top:4px;">Name · Nombre</div>
+    </div>
+    <div class="meta">
+      <div><span class="l" style="display:inline-block; width:1.6in; border-bottom:2px solid var(--ink); height:1.4em;"></span><div style="font-size:10pt;">Date · Fecha</div></div>
+      <div><span class="l" style="display:inline-block; width:1.8in; border-bottom:2px solid var(--ink); height:1.4em;"></span><div style="font-size:10pt;">Signed by · Firmado por</div></div>
+    </div>
+  </div>
+  <div class="stamp"><b>EPIC READER</b><span>jungle edition</span></div>
+</section>
+
+<!-- ================== PAGE 19 — ABOUT THE COLLECTION ================== -->
+<section class="page about-page deco-dots">
+  <div class="logo">
+    <svg class="er-logo" viewBox="0 0 88 106">
+      <rect class="bg" x="4" y="2" width="80" height="102" rx="18"/>
+      <g transform="translate(8,8)">
+        <circle cx="36" cy="20" r="14" fill="#fff" opacity=".18"/>
+        <path class="ship" d="M14 28h44l-6 8H20l-6-8zm22-18l8 14H28l8-14zm0 2v12"/>
+        <path class="ship" d="M22 36c8 4 20 4 28 0v3H22z" opacity=".9"/>
+      </g>
+      <text class="er-text" x="44" y="76" text-anchor="middle">EPIC</text>
+      <text class="er-text" x="44" y="92" text-anchor="middle">READERS</text>
+    </svg>
+  </div>
+  <h1>About the collection</h1>
+  <div class="sub">Sobre la colección</div>
+  <div class="row">
+    <img src="../books/epic-bilingual-1st.jpg" alt="Bilingual Short Stories cover">
+    <div class="txt">
+      <h3>Spanish-English Bilingual Short Stories</h3>
+      <p>This workbook is a free companion to the <b>Bilingual Short Stories</b> book — twelve short adventures for kids who are starting their reading journey, exploring a second language, or growing up bilingual. Spanish and English sit side by side, with friendly illustrations and simple words that build confidence naturally.</p>
+      <p style="font-family:'Caveat',cursive; font-size:14pt; color:var(--navy); margin-top:10px;">«Short stories. Simple words. Big confidence.»</p>
+    </div>
+  </div>
+  <a class="cta" href="https://www.amazon.com/dp/B0GZSQ7CNR">Get the book on Amazon →</a>
+  <div class="url">coralhorizonhouse.com/bilingual-short-stories</div>
+  <div class="pf"><span class="imp">An Epic Readers collection</span><span class="pn">19</span></div>
+</section>
+
+<!-- ================== PAGE 20 — BACK COVER ================== -->
+<section class="page backc">
+  <div class="logo">
+    <svg class="er-logo" viewBox="0 0 88 106" style="width:110px; height:132px;">
+      <rect class="bg" x="4" y="2" width="80" height="102" rx="18"/>
+      <g transform="translate(8,8)">
+        <circle cx="36" cy="20" r="14" fill="#fff" opacity=".18"/>
+        <path class="ship" d="M14 28h44l-6 8H20l-6-8zm22-18l8 14H28l8-14zm0 2v12"/>
+      </g>
+      <text class="er-text" x="44" y="76" text-anchor="middle" style="fill:var(--green-deep)">EPIC</text>
+      <text class="er-text" x="44" y="92" text-anchor="middle" style="fill:var(--green-deep)">READERS</text>
+    </svg>
+  </div>
+  <h1>The adventure <span class="accent">never ends.</span></h1>
+  <p class="quote">More short stories. More animals. More confidence. New grades coming soon — so the journey can keep growing as your reader grows.</p>
+  <div class="imps">
+    <span>The Kind Way</span>
+    <span class="you">Epic Readers</span>
+    <span>Tech Savvy Guides</span>
+  </div>
+  <div class="url">An imprint of Coral Horizon House · coralhorizonhouse.com</div>
+</section>
+
+<script>
+// Word search grid generator (deterministic, ~simple placement)
+(function(){
+  var grid = document.getElementById('ws-grid');
+  if (!grid) return;
+  var W=12, H=10;
+  var cells = Array(H).fill(0).map(()=>Array(W).fill(null));
+  var words = ['MONKEY','TIGER','FROG','PARROT','SLOTH','SNAKE','MONO','TIGRE','RANA','LORO','TUCAN','JAGUAR'];
+  var dirs = [[1,0],[0,1],[1,1]];
+  function place(w){
+    for(var t=0;t<400;t++){
+      var d = dirs[(Math.random()*dirs.length)|0];
+      var r = (Math.random()*H)|0, c = (Math.random()*W)|0;
+      var rr=r+d[1]*(w.length-1), cc=c+d[0]*(w.length-1);
+      if(rr<0||rr>=H||cc<0||cc>=W) continue;
+      var ok=true;
+      for(var i=0;i<w.length;i++){
+        var x=c+d[0]*i, y=r+d[1]*i, ex=cells[y][x];
+        if(ex && ex!==w[i]){ ok=false; break; }
+      }
+      if(!ok) continue;
+      for(var i=0;i<w.length;i++){ cells[r+d[1]*i][c+d[0]*i]=w[i]; }
+      return true;
+    }
+    return false;
+  }
+  // seed RNG for repeatability
+  var seed=42; Math.random=function(){ seed=(seed*9301+49297)%233280; return seed/233280; };
+  words.forEach(place);
+  var letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var html='';
+  for(var y=0;y<H;y++) for(var x=0;x<W;x++){
+    var ch = cells[y][x] || letters[(Math.random()*26)|0];
+    html += '<div class="c">'+ch+'</div>';
+  }
+  grid.innerHTML = html;
+})();
+</script>
+
+</body>
+</html>
